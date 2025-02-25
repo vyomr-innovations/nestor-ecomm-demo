@@ -1,5 +1,6 @@
 import Banner from "@/components/banner";
 import CategoryGrid from "@/components/categories/categoryGrid";
+// import { Button } from "@/components/ui/button"
 
 export default function Home() {
   return (
