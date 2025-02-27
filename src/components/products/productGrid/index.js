@@ -17,7 +17,7 @@ const ProductGrid = ({ title, price, cover }) => {
             </div>
             <div className="p-1 py-1">
               <CardContent >
-                <h2 className="text-xl font- text-gray-600 cursor-pointer">{title}</h2>
+                <h2 className="text-xl font-bold text-gray-700 cursor-pointer">{title}</h2>
                 <p>{price}</p>
               </CardContent>
             </div>
