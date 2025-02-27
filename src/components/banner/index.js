@@ -3,7 +3,7 @@ import { Button } from "@/components/ui/button"; // Adjust path if necessary
 
 export default function Banner() {
   return (
-    <div className="w-full flex flex-wrap bg-[#F7F5F6] rounded-lg gap-6 my-4 p-6 md:p-10 justify-center items-center">
+    <div className="w-full flex flex-wrap bg-[#F7F5F6] rounded-lg gap-6 my-5 mt-20 p-6 md:p-10 justify-center items-center">
       {/* Text Content */}
       <div className="flex flex-col gap-4 text-left max-w-md p-5 md:p-0">
         <h1 className="text-2xl sm:text-3xl md:text-4xl font-bold">
@@ -22,8 +22,8 @@ export default function Banner() {
       <div className="w-full md:w-[500px] flex justify-center">
         <Image
           src="/images/cup_banner.avif"
-          width={500}
-          height={300}
+          width={1024}
+          height={720}
           unoptimized
           className="w-full max-w-[500px] h-auto object-contain"
           alt="banner cup"
