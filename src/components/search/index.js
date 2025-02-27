@@ -1,6 +1,6 @@
 import React from 'react'
 import { Input } from "@/components/ui/input"
-import { Search, ShoppingBag, UserCheck2Icon } from 'lucide-react'
+import { Search, ShoppingBag, User2Icon } from 'lucide-react'
 
 function Searchbar() {
     return (
@@ -17,7 +17,7 @@ function Searchbar() {
                 </div>
                 <div className="flex items-center gap-4">
                     <ShoppingBag className="cursor-pointer" />
-                    <UserCheck2Icon className="cursor-pointer" />
+                    <User2Icon className="cursor-pointer" />
                 </div>
                 <div className="sm:hidden">
                     <Search className="cursor-pointer text-xl" />
