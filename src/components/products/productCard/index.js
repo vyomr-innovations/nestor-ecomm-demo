@@ -3,7 +3,7 @@ import React from "react";
 import { Card, CardHeader, CardContent } from "@/components/ui/card";
 import Image from "next/image";
 
-const ProductGrid = ({ title, price, cover }) => {
+const productCard = ({ title, price, cover }) => {
   return (
     <Card className="overflow-hidden border-none shadow-none">
       <div className="flex justify-center relative">
@@ -30,4 +30,4 @@ const ProductGrid = ({ title, price, cover }) => {
   );
 };
 
-export default ProductGrid;
+export default productCard;

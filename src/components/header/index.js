@@ -19,15 +19,15 @@ const components = [
     },
     {
         title: "Apperal",
-        href: "/apperal"
+        href: "/categories"
     },
     {
         title: "Accessories",
-        href: "/accessories"
+        href: "#"
     },
     {
         title: "Digital",
-        href: "/digital"
+        href: "#"
     }
 ];
 export default function Header() {
