@@ -20,10 +20,15 @@ function BreadCrumb() {
                 <BreadcrumbSeparator />
                 <BreadcrumbItem>
                     <BreadcrumbLink>
-                        <Link href="/Apparel">Apparel</Link>
+                        <Link href="/Apparel">Category</Link>
                     </BreadcrumbLink>
                 </BreadcrumbItem>
                 <BreadcrumbSeparator />
+                <BreadcrumbItem>
+                    <BreadcrumbLink>
+                        <Link href="/Apparel">Apparel</Link>
+                    </BreadcrumbLink>
+                </BreadcrumbItem>
             </BreadcrumbList>
         </Breadcrumb>
     )
