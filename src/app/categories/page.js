@@ -7,15 +7,19 @@ import React from 'react';
 function CategoriesPage() {
     return (
         <>
+            {/* BreadCrumb Component */}
             <div className="mt-16 pt-2">
-                {/* BreadCrumb Component */}
-                <BreadCrumb />
+                <BreadCrumb
+                    page1={"Home"}
+                    catogory={"Categories"}
+                    page2={"Apparel"}
+                />
                 <h1 className='font-bold text-2xl mt-2'>Apparel</h1>
                 <p className='text-md text-muted-foreground'>
                     Category
                 </p>
             </div>
-
+            
             <div className="grid grid-cols-3">
                 {products.map((product, index) => {
                     return (

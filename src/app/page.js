@@ -13,7 +13,7 @@ export default function Home() {
       {/* Product Card */}
 
       <div className="grid grid-cols-3">
-        {products.map((product, index) => {
+        {products.slice(0, 6).map((product, index) => {
           return (
             <ProductCard
               key={index}
@@ -24,39 +24,6 @@ export default function Home() {
           )
         })}
       </div>
-
-      {/* <div className="grid grid-cols-3">
-        <ProductCard
-          cover={"/images/Sunbeam_Tote_Jeff.jpg"}
-          title={"Sunbeam Tote Jeff"}
-          price={"$25.00"}
-        />
-        <ProductCard
-          cover={"/images/ShawodStrikeShoes.jpg"}
-          title={"Shawod Strike Shoes"}
-          price={"$20.00"}
-        />
-        <ProductCard
-          cover={"/images/Horizon_Gaze_Sunglasses.jpg"}
-          title={"Horizon Gaze Sunglasses"}
-          price={"$20.00"}
-        />
-        <ProductCard
-          cover={"/images/ZebraBlend_T-Shirt.jpg"}
-          title={"ZebraBlend T-Shirt"}
-          price={"$55.00"}
-        />
-        <ProductCard
-          cover={"/images/Gloves_With_holes.jpg"}
-          title={"Gloves With holes"}
-          price={"$1,299.00"}
-        />
-        <ProductCard
-          cover={"/images/Aqua_Stride_Bottle.jpg"}
-          title={"Aqua Stride Bottle"}
-          price={"$20.00"}
-        />
-      </div> */}
 
       {/* Category Card */}
 
@@ -73,5 +40,5 @@ export default function Home() {
         />
       </div>
     </>
-  );
+  )
 }
