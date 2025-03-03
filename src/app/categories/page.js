@@ -3,34 +3,37 @@ import ProductCard from '@/components/products/productCard';
 import BreadCrumb from '../../components/breadcrumb';
 import { products } from '@/lib/shopData';
 import React from 'react';
+import CategoryGrid from '@/components/categories/categorieCard';
 
 function CategoriesPage() {
     return (
         <>
             {/* BreadCrumb Component */}
-            <div className="mt-16 pt-2">
+            <div className=" pt-2 my-16">
                 <BreadCrumb
                     page1={"Home"}
                     catogory={"Categories"}
                     page2={"Apparel"}
                 />
-                <h1 className='font-bold text-2xl mt-2'>Apparel</h1>
-                <p className='text-md text-muted-foreground'>
-                    Category
-                </p>
+                <h1 className='font-bold text-2xl mt-2'>Categories</h1>
             </div>
-            
-            <div className="grid grid-cols-3">
-                {products.map((product, index) => {
-                    return (
-                        <ProductCard
-                            key={index}
-                            cover={product.cover}
-                            title={product.title}
-                            price={product.price}
-                        />
-                    )
-                })}
+
+            <div className="grid grid-cols-2 gap-3">
+                <CategoryGrid
+                    title={"Apparel"}
+                    cover={"/images/apparel.avif"}
+                    description={"Shop now"}
+                />
+                <CategoryGrid
+                    title={"Accessories"}
+                    cover={"/images/accessories.avif"}
+                    description={"Shop now"}
+                />
+                <CategoryGrid
+                    title={"Digital"}
+                    cover={"/images/Workspace_Carft_Pro.jpg"}
+                    description={"Shop now"}
+                />
             </div>
         </>
     );
