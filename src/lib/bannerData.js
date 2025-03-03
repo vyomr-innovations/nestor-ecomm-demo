@@ -10,12 +10,12 @@ const bannerData = [
   },
   {
     id: 2,
-    title1: "Discover our 2",
-    title2: "Curated Collection",
+    title1: "Headphone Test Lab",
+    title2: "Precision Sound Analysis",
     description:
-      "Explore our carefully selected products for your home and lifestyle.",
+      "Experience high-fidelity audio with our expertly tested headphones for the best sound quality.",
     buttonText: "Shop Now",
-    imageSrc: "/images/cup_banner.avif"
+    imageSrc: "/images/EchoBass_Headphones.jpg"
   }
 ];
 
