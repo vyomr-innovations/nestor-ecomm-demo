@@ -1,9 +1,12 @@
+"use client";
 import Banner from "@/components/banner";
 import CategoryCard from "@/components/categories/categorieCard";
 import ProductCard from "@/components/products/productCard";
 import { products } from "@/lib/shopData";
+import { useRouter } from "next/navigation";
 
 export default function Home() {
+  const route = useRouter();
   return (
     <>
       {/* Home Page Banner */}
@@ -17,11 +20,14 @@ export default function Home() {
           return (
             <ProductCard
               key={index}
+              onClick={() =>
+                route.push(`/products/${product.title.replace(/\s+/g, "-")}`)
+              }
               cover={product.cover}
               title={product.title}
               price={product.price}
             />
-          )
+          );
         })}
       </div>
 
@@ -40,5 +46,5 @@ export default function Home() {
         />
       </div>
     </>
-  )
+  );
 }

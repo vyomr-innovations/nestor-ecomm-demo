@@ -3,10 +3,10 @@ import React from "react";
 import { Card, CardHeader, CardContent } from "@/components/ui/card";
 import Image from "next/image";
 
-const productCard = ({ title, price, cover }) => {
+const productCard = ({ title, price, cover, onClick }) => {
   return (
     <Card className="overflow-hidden border-none shadow-none">
-      <div className="flex justify-center relative">
+      <div onClick={onClick} className="flex justify-center relative">
         <CardHeader>
           <Image
             width={1024}
