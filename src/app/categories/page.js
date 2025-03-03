@@ -17,7 +17,8 @@ function CategoriesPage() {
                 />
                 <h1 className='font-bold text-2xl mt-2'>Categories</h1>
             </div>
-
+            
+            {/* CategoryGrid Component */}
             <div className="grid grid-cols-2 gap-3">
                 <CategoryGrid
                     title={"Apparel"}

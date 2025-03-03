@@ -72,7 +72,7 @@ export const products = [
     category: "Accessories"
   },
   {
-    cover: "/images/Beneath_the_Starless_Sky.png",
+    cover: "/images/Twin_Tight_Belts.jpg",
     title: "Beneath the Starless Sky",
     price: "$45.00",
     category: "Accessories"

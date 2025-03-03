@@ -1,7 +1,7 @@
 import React from 'react'
 import BreadCrumb from '@/components/breadcrumb';
 
-function ProductsPage() {
+function ProductPage() {
     return (
         <>
             {/* BreadCrumb Component */}
@@ -11,8 +11,16 @@ function ProductsPage() {
                     catogory={"Sunbeam Tote Jeff"}
                 />
             </div>
+            <div className="container">
+                <div>
+                    
+                </div>
+                <div>
+
+                </div>
+            </div>
         </>
     )
 }
 
-export default ProductsPage;
+export default ProductPage;
