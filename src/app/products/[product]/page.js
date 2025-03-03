@@ -1,5 +1,7 @@
 import React from 'react'
 import BreadCrumb from '@/components/breadcrumb';
+import ImageView from '@/components/image-view';
+
 
 function ProductPage() {
     return (
@@ -11,14 +13,7 @@ function ProductPage() {
                     catogory={"Sunbeam Tote Jeff"}
                 />
             </div>
-            <div className="container">
-                <div>
-                    
-                </div>
-                <div>
-
-                </div>
-            </div>
+            <ImageView/>
         </>
     )
 }
