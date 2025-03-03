@@ -8,25 +8,25 @@ import {
     BreadcrumbPage,
     BreadcrumbSeparator,
 } from "@/components/ui/breadcrumb";
-const BreadCrumb = ({ page1, catogory, page2 }) => {
+const BreadCrumb = ({ page1, page3, page2 }) => {
     return (
         <Breadcrumb className="font-bold">
             <BreadcrumbList>
                 <BreadcrumbItem>
-                    <BreadcrumbLink>
-                        <Link href="/Home">{page1}</Link>
+                    <BreadcrumbLink href={`/${page1}`}>
+                        {page1}
                     </BreadcrumbLink>
                 </BreadcrumbItem>
                 <BreadcrumbSeparator />
                 <BreadcrumbItem>
-                    <BreadcrumbLink>
-                        <Link href="/Apparel">{catogory}</Link>
+                <BreadcrumbLink href={`/${page3}`}>
+                        {page3}
                     </BreadcrumbLink>
                 </BreadcrumbItem>
                 <BreadcrumbSeparator />
                 <BreadcrumbItem>
-                    <BreadcrumbLink>
-                        <Link href="/Apparel">{page2}</Link>
+                <BreadcrumbLink href={`/${page2}`}>
+                        {page2}
                     </BreadcrumbLink>
                 </BreadcrumbItem>
             </BreadcrumbList>

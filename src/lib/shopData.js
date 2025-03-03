@@ -54,49 +54,49 @@ export const products = [
     category: "Apparel"
   },
   {
-    cover: "Another_handbag.png",
+    cover: "/images/Another_handbag.png",
     title: "Another handbag",
     price: "$1,999.00",
     category: "Accessories"
   },
   {
-    cover: "Sleek_Laptop_Backpack.jpg",
+    cover: "/images/Sleek_Laptop_Backpack.jpg",
     title: "Sleek Laptop Backpack",
     price: "$1,350.00",
     category: "Accessories"
   },
   {
-    cover: "All_Weather_Dry_Bag.png",
+    cover: "/images/All_Weather_Dry_Bag.png",
     title: "All Weather Dry Bag",
     price: "$500.00",
     category: "Accessories"
   },
   {
-    cover: "Beneath_the_Starless_Sky.png",
+    cover: "/images/Beneath_the_Starless_Sky.png",
     title: "Beneath the Starless Sky",
     price: "$45.00",
     category: "Accessories"
   },
   {
-    cover: "EchoBass_Headphones.jpg",
+    cover: "/images/EchoBass_Headphones.jpg",
     title: "EchoBass Headphones",
     price: "$4,110.00",
     category: "Accessories"
   },
   {
-    cover: "Azure_Escape_Bag.jpg",
+    cover: "/images/Azure_Escape_Bag.jpg",
     title: "Azure Escape Bag",
     price: "$250.00",
     category: "Accessories"
   },
   {
-    cover: "Echoes_of_Tomorrow.jpg",
+    cover: "/images/Echoes_of_Tomorrow.jpg",
     title: "Echoes of Tomorrow",
     price: "$110.00",
     category: "Digital"
   },
   {
-    cover: "Workspace_Carft_Pro.jpg",
+    cover: "/images/Workspace_Carft_Pro.jpg",
     title: "Workspace Craft Pro",
     price: "$150.00",
     category: "Digital"

@@ -15,19 +15,19 @@ import Searchbar from "../search";
 const components = [
     {
         title: "Home",
-        href: "/Home"
+        href: "/"
     },
     {
-        title: "Apperal",
-        href: "/categories"
+        title: "Apparel",
+        href: "/categories/Apparel"
     },
     {
         title: "Accessories",
-        href: "#"
+        href: "/categories/Accessories"
     },
     {
         title: "Digital",
-        href: "#"
+        href: "/categories/Digital"
     }
 ];
 export default function Header() {
@@ -49,9 +49,7 @@ export default function Header() {
                                         >
                                             <NavigationMenuLink
                                                 className={cn(
-                                                    "ml-5 hover:bg-gray-100 transition-all font-base  px-4 py-2 rounded-md",
-                                                    window.location.pathname == component.href &&
-                                                    "bg-gray-100"
+                                                    "ml-5 hover:bg-gray-100 transition-all font-base  px-4 py-2 rounded-md"
                                                 )}
                                             >
                                                 {component.title}
@@ -73,21 +71,21 @@ export default function Header() {
 const ListItem = ({ className, title, children, ...props }, ref) => {
     return (
         <li>
-            <NavigationMenuLink asChild>
-                {/* <a
-                    ref={ref}
-                    className={cn(
-                        "block select-none space-y-1 rounded-md p-3 leading-none no-underline outline-none transition-colors hover:bg-accent hover:text-accent-foreground focus:bg-accent focus:text-accent-foreground",
-                        className
-                    )}
-                    {...props}
-                >
+            <a
+                ref={ref}
+                className={cn(
+                    "block select-none space-y-1 rounded-md p-3 leading-none no-underline outline-none transition-colors hover:bg-accent hover:text-accent-foreground focus:bg-accent focus:text-accent-foreground",
+                    className
+                )}
+                {...props}
+            >
+                <NavigationMenuLink asChild>
                     <div className="text-sm font-medium leading-none">{title}</div>
                     <p className="line-clamp-2 text-sm leading-snug text-muted-foreground">
                         {children}
                     </p>
-                </a> */}
-            </NavigationMenuLink>
+                </NavigationMenuLink>
+            </a>
         </li>
     );
 };
