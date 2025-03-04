@@ -1,12 +1,9 @@
 import React from 'react'
 import Image from 'next/image';
-import {
-    Card,
-    CardFooter
-} from "@/components/ui/card";
+import { Card, CardFooter } from "@/components/ui/card";
 import Link from 'next/link';
 
-function ProductSugg(cover, title, price) {
+function ProductSugg({ cover, title, price }) {
     return (
         <div className='flex items-center m-2'>
             <Card className="border-none w-50">
@@ -19,8 +16,12 @@ function ProductSugg(cover, title, price) {
                     alt="Image-view"
                 />
                 <CardFooter>
-                    <h3 className='font-bold text-lg p-2 m-2'><Link href={"#"}>{title}</Link></h3>
-                    <p>{price}</p>
+                    <div className="flex flex-col p-1 m-1">
+                        <h3 className='font-bold text-lg'>
+                            <Link href={"#"}>{title}</Link>
+                        </h3>
+                        <p>{price}</p>
+                    </div>
                 </CardFooter>
             </Card>
         </div>

@@ -2,10 +2,10 @@
 import React from 'react';
 import Image from 'next/image';
 
-function ImageView() {
+function ImageView({cover}) {
     return (
         <Image
-            src="/images/Sunbeam_Tote_Jeff.jpg"
+            src={cover}
             width={1800}
             height={1800}
             unoptimized
