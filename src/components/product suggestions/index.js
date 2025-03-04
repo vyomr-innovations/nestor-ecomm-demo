@@ -17,7 +17,7 @@ function ProductSugg({ cover, title, price }) {
                 />
                 <CardFooter>
                     <div className="flex flex-col p-1 m-1">
-                        <h3 className='font-bold text-lg'>
+                        <h3 className='font-semibold text-lg'>
                             <Link href={"#"}>{title}</Link>
                         </h3>
                         <p>{price}</p>

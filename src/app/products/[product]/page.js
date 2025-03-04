@@ -4,6 +4,7 @@ import ImageView from '@/components/image-view';
 import ProductSugg from '@/components/product suggestions';
 import ProductInfo from '@/components/product-info';
 import { products } from "@/lib/shopData";
+import ProductPdf from '@/components/product pdf view';
 
 function ProductPage() {
     return (
@@ -30,6 +31,9 @@ function ProductPage() {
                 </div>
             </div>
 
+                {/* Product Pdf View */}
+                <ProductPdf />
+            
             {/* Product Suggection */}
             <div className='grid grid-cols-4'>
 
