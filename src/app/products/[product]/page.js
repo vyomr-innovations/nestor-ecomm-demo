@@ -5,6 +5,7 @@ import ProductSugg from '@/components/product suggestions';
 import ProductInfo from '@/components/product-info';
 import { products } from "@/lib/shopData";
 import ProductPdf from '@/components/product pdf view';
+import ProductSilder from '@/components/product slider';
 
 function ProductPage() {
     return (
@@ -31,12 +32,15 @@ function ProductPage() {
                 </div>
             </div>
 
-                {/* Product Pdf View */}
-                <ProductPdf />
-            
-            {/* Product Suggection */}
-            <div className='grid grid-cols-4'>
+            {/* Product Pdf View */}
+            <ProductPdf />
 
+            {/* Product Slider */}
+            {/* <ProductSilder/> */}
+
+            {/* Product Suggection */}
+            <h1 className='text-2xl font-bold m-5'>You May Also Like</h1>
+            <div className='grid grid-cols-4'>
                 {products
                     .filter((product) => product.category === "product suggestions")
                     .map((product, index) => (
