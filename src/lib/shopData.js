@@ -60,9 +60,9 @@ export const products = [
     category: "Accessories"
   },
   {
-    cover: "/images/Sleek_Laptop_Backpack.jpg",
-    title: "Sleek Laptop Backpack",
-    price: "$1,350.00",
+    cover: "/images/Watch.jpg",
+    title: "Watch",
+    price: "$249,999.00",
     category: "Accessories"
   },
   {
@@ -73,7 +73,7 @@ export const products = [
   },
   {
     cover: "/images/Twin_Tight_Belts.jpg",
-    title: "Beneath the Starless Sky",
+    title: "Twin Tight Belts",
     price: "$45.00",
     category: "Accessories"
   },

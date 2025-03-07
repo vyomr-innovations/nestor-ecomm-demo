@@ -3,8 +3,13 @@ import React from "react";
 const ProductPdf = () => {
     return (
         <div className="m-4">
-            <iframe src="/products_pdf/Sunbeam_Tote_Jeff.pdf" width="220" height="220"
-                title="Product PDF" className="rounded-lg"></iframe>
+            <object 
+                data="/products_pdf/Sunbeam_Tote_Jeff.pdf" 
+                type="application/pdf" 
+                width="230" 
+                height="230"
+                className="rounded-lg">
+            </object>
         </div>
     );
 };

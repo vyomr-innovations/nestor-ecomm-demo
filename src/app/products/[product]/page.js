@@ -6,6 +6,7 @@ import ProductInfo from '@/components/product-info';
 import { products } from "@/lib/shopData";
 import ProductPdf from '@/components/product pdf view';
 import ProductSilder from '@/components/product slider';
+import ProductVideo from '@/components/product Video';
 
 function ProductPage() {
     return (
@@ -32,11 +33,19 @@ function ProductPage() {
                 </div>
             </div>
 
-            {/* Product Pdf View */}
-            <ProductPdf />
+            <div className="flex col-span-2 my-2">
+                {/* Product Pdf View */}
+                <ProductPdf />
 
-            {/* Product Slider */}
-            {/* <ProductSilder/> */}
+                {/* Product Video View */}
+                <ProductVideo />
+            </div>
+
+
+            <div>
+                {/* Product Slider */}
+                {/* <ProductSilder/> */}
+            </div>
 
             {/* Product Suggection */}
             <h1 className='text-2xl font-bold m-5'>You May Also Like</h1>
