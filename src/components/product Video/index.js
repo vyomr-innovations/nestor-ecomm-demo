@@ -1,9 +1,28 @@
-import React from 'react';
+"use client"
+import React, { useRef, useState } from 'react';
 
 function ProductVideo() {
+    const videoRef = useRef(null);
+    const [isPlaying, setIsPlaying] = useState(false);
+
+    const togglePlay = () => {
+        if (isPlaying) {
+            videoRef.current.pause();
+            videoRef.current.currentTime = 0; // Reset to the start
+        } else {
+            videoRef.current.play();
+        }
+        setIsPlaying(!isPlaying);
+    };
+
     return (
-        <video width="235" height="500" controls muted
-            className='rounded-lg m-4 bg-black'>
+        <video
+            ref={videoRef}
+            width="235"
+            height="500"
+            className="rounded-lg m-4 bg-black cursor-pointer"
+            onClick={togglePlay}
+        >
             <source src="/video/product-video.mp4" type="video/mp4" />
         </video>
     );

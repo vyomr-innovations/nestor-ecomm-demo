@@ -15,7 +15,7 @@ const bannerData = [
     description:
       "Experience high-fidelity audio with our expertly tested headphones for the best sound quality.",
     buttonText: "Shop Now",
-    imageSrc: "/images/EchoBass_Headphones.jpg"
+    imageSrc: "/images/EchoBass_Headphones-removebg-preview.png"
   }
 ];
 

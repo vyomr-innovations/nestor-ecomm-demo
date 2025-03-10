@@ -2,7 +2,7 @@
 import React from 'react';
 import Image from 'next/image';
 
-function ImageView({cover}) {
+function ImageView({ cover }) {
     return (
         <Image
             src={cover}

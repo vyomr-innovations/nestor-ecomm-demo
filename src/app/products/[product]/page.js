@@ -44,6 +44,7 @@ function ProductPage() {
 
             <div>
                 {/* Product Slider */}
+
                 {/* <ProductSilder/> */}
             </div>
 
@@ -61,27 +62,6 @@ function ProductPage() {
                         />
                     ))
                 }
-
-                {/* <ProductSugg
-                    cover={"/images/Chestnut_Carryall_Bag.jpg"}
-                    title={"Chestnut Carryall Bag"}
-                    price={"$10.00"}
-                />
-                <ProductSugg
-                    cover={"/images/Versatile_Tote_Backpack.png"}
-                    title={"Veratile Tote Backpack"}
-                    price={"$1,000.00"}
-                />
-                <ProductSugg
-                    cover={"/images/Eco_friendly_Tote.png"}
-                    title={"Eco friendly Tote"}
-                    price={"$300.00"}
-                />
-                <ProductSugg
-                    cover={"/images/Classic_Messenger_Bag.png"}
-                    title={"Classic Messenger Bag"}
-                    price={"$700.00"}
-                /> */}
             </div>
         </>
     )

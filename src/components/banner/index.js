@@ -131,11 +131,10 @@ export default function Banner() {
           <button
             key={`dot-${index}`}
             onClick={() => goToSlide(index)}
-            className={`w-3 h-3 rounded-full focus:outline-none ${
-              currentSlide === index
+            className={`w-3 h-3 rounded-full focus:outline-none ${currentSlide === index
                 ? "bg-gray-900"
                 : "bg-gray-300 hover:bg-gray-400"
-            }`}
+              }`}
             aria-label={`Go to slide ${index + 1}`}
           ></button>
         ))}
