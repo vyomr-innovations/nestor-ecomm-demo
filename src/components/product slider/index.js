@@ -8,6 +8,7 @@ import {
   CarouselNext,
   CarouselPrevious,
 } from "@/components/ui/carousel"
+import { products } from '@/lib/shopData'
 
 
 function ProductSlider() {
@@ -15,7 +16,7 @@ function ProductSlider() {
     <div>
       <Carousel className="w-full max-w-xs">
         <CarouselContent>
-          {Array.from({ length: 5 }).map((_, index) => (
+          {products.from({ length: 5 }).map((product, index) => (
             <CarouselItem key={index}>
               <div className="p-1">
                 <Card>

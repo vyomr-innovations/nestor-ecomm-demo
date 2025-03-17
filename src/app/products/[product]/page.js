@@ -33,19 +33,15 @@ function ProductPage() {
                 </div>
             </div>
 
-            <div className="flex col-span-2 my-2">
+            <div className="flex col-span-3 my-2">
                 {/* Product Pdf View */}
                 <ProductPdf />
 
                 {/* Product Video View */}
                 <ProductVideo />
-            </div>
 
-
-            <div>
                 {/* Product Slider */}
-
-                {/* <ProductSilder/> */}
+                {/* <ProductSilder /> */}
             </div>
 
             {/* Product Suggection */}
