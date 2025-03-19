@@ -23,7 +23,7 @@ function ProductVideo() {
             className="rounded-lg m-4 bg-black cursor-pointer"
             onClick={togglePlay}
         >
-            <source src="/video/product-video.mp4" type="video/mp4" />
+            <source src="/video/3_9_2025.mp4" type="video/mp4" />
         </video>
     );
 }

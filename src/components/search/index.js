@@ -16,8 +16,8 @@ function Searchbar() {
                     <Search className="absolute top-1/2 right-2 transform -translate-y-1/2 cursor-pointer" />
                 </div>
                 <div className="flex items-center gap-4">
-                    <ShoppingBag className="cursor-pointer" />
-                    <User2Icon className="cursor-pointer" />
+                    <a href=""> <ShoppingBag className="cursor-pointer hover:text-gray-500" /></a>
+                    <a href="/userlogin"><User2Icon className="cursor-pointer hover:text-gray-500" /></a>
                 </div>
                 <div className="sm:hidden">
                     <Search className="cursor-pointer text-xl" />
