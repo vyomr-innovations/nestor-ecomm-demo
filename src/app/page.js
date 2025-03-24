@@ -2,6 +2,7 @@
 import Banner from "@/components/banner";
 import CategoryCard from "@/components/categories/categorieCard";
 import ProductCard from "@/components/products/productCard";
+import ProductGrid from "@/components/products/productGrid";
 import { products } from "@/lib/shopData";
 import { useRouter } from "next/navigation";
 
@@ -15,21 +16,7 @@ export default function Home() {
 
       {/* Product Card */}
 
-      <div className="grid grid-cols-3">
-        {products.slice(0, 6).map((product, index) => {
-          return (
-            <ProductCard
-              key={index}
-              onClick={() =>
-                route.push(`/products/${product.title.replace(/\s+/g, "-")}`)
-              }
-              cover={product.cover}
-              title={product.title}
-              price={product.price}
-            />
-          );
-        })}
-      </div>
+      <ProductGrid />
 
       {/* Category Card */}
 
