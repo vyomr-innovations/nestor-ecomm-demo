@@ -1,6 +1,7 @@
 import React from 'react'
 import { Input } from "@/components/ui/input"
 import { Search, ShoppingBag, User2Icon } from 'lucide-react'
+import Link from 'next/link'
 
 function Searchbar() {
     return (
@@ -17,7 +18,7 @@ function Searchbar() {
                 </div>
                 <div className="flex items-center gap-4">
                     <ShoppingBag className="cursor-pointer hover:text-gray-500" />
-                    <User2Icon className="cursor-pointer hover:text-gray-500" />
+                    <Link href="./userlogin"><User2Icon className="cursor-pointer hover:text-gray-500" /></Link>
                 </div>
                 <div className="sm:hidden">
                     <Search className="cursor-pointer text-xl" />
