@@ -49,10 +49,10 @@ function ProductPage() {
                 <ProductPdf />
 
                 {/* Product Video View */}
-                <ProductVideo />
+                {/* <ProductVideo /> */}
 
                 {/* Product Slider */}
-                <ProductSilder />
+                {/* <ProductSilder /> */}
             </div>
 
             {/* Product Suggection */}

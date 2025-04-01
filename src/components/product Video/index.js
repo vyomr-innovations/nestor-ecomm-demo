@@ -8,7 +8,7 @@ function ProductVideo() {
     const togglePlay = () => {
         if (isPlaying) {
             videoRef.current.pause();
-            videoRef.current.currentTime = 0; // Reset to the start
+            videoRef.current.currentTime = 0;
         } else {
             videoRef.current.play();
         }
@@ -18,9 +18,9 @@ function ProductVideo() {
     return (
         <video
             ref={videoRef}
-            width="235"
+            width="240"
             height="500"
-            className="rounded-lg m-4 bg-black cursor-pointer"
+            className="rounded-lg m-4 cursor-pointer"
             onClick={togglePlay}
         >
             <source src="/video/3_9_2025.mp4" type="video/mp4" />

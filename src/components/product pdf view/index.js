@@ -6,8 +6,8 @@ const ProductPdf = () => {
             <object
                 data="/products_pdf/Sunbeam_Tote_Jeff.pdf"
                 type="application/pdf"
-                width="230"
-                height="230"
+                width="240"
+                height="240"
                 className="rounded-lg">
             </object>
         </div>
