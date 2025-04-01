@@ -1,4 +1,5 @@
-import React from 'react'
+"use client"
+import React, { useState, useEffect } from 'react';
 import BreadCrumb from '@/components/breadcrumb';
 import ImageView from '@/components/image-view';
 import ProductSugg from '@/components/product suggestions';
@@ -7,8 +8,16 @@ import { products } from "@/lib/shopData";
 import ProductPdf from '@/components/product pdf view';
 import ProductSilder from '@/components/product slider';
 import ProductVideo from '@/components/product Video';
+import { SkeletonCard } from '@/components/skeleton';
 
 function ProductPage() {
+    const [loading, setLoading] = useState(true);
+
+    useEffect(() => {
+        const timer = setTimeout(() => setLoading(false), 5000);
+        return () => clearTimeout(timer);
+    }, []);
+
     return (
         <>
             {/* BreadCrumb Component */}
@@ -21,16 +30,18 @@ function ProductPage() {
 
             {/* Image View */}
             <div className="flex justify-between items-start gap-1 mt-8">
-                <div>
-                    <ImageView
-                        cover="/images/Sunbeam_Tote_Jeff.jpg"
-                    />
-                </div>
-
-                {/* Product Informaction */}
-                <div className='items-end p-5 m-1 gap-1'>
-                    <ProductInfo />
-                </div>
+                {loading ? (
+                    <SkeletonCard />
+                ) : (
+                    <>
+                        <div>
+                            <ImageView cover="/images/Sunbeam_Tote_Jeff.jpg" />
+                        </div>
+                        <div className='items-end p-5 m-1 gap-1'>
+                            <ProductInfo />
+                        </div>
+                    </>
+                )}
             </div>
 
             <div className="flex col-span-3 my-2">
