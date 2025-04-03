@@ -46,18 +46,18 @@ function ProductPage() {
 
             <div className="flex col-span-3 my-2">
                 {/* Product Pdf View */}
-                <ProductPdf />
+                {/* <ProductPdf /> */}
 
                 {/* Product Video View */}
                 {/* <ProductVideo /> */}
 
                 {/* Product Slider */}
-                {/* <ProductSilder /> */}
+                <ProductSilder />
             </div>
 
             {/* Product Suggection */}
-            <h1 className='text-2xl font-bold m-5'>You May Also Like</h1>
-            <div className='grid grid-cols-4'>
+            <h1 className="text-2xl font-bold m-5">You May Also Like</h1>
+            <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4 px-5">
                 {products
                     .filter((product) => product.category === "product suggestions")
                     .map((product, index) => (
@@ -67,9 +67,9 @@ function ProductPage() {
                             title={product.title}
                             price={product.price}
                         />
-                    ))
-                }
+                    ))}
             </div>
+
         </>
     )
 }
