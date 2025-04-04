@@ -9,8 +9,8 @@ import {
   CarouselPrevious,
 } from "@/components/ui/carousel"
 import { products } from '@/lib/shopData'
-import ProductPdf from '../product pdf view'
-import ProductVideo from '../product Video'
+import ProductPdf from './productPdfView'
+import ProductVideo from './productVideo'
 
 function ProductSlider() {
   const filteredProducts = products.filter(product => product.title === "Sunbeam Tote Jeff")

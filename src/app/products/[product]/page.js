@@ -5,9 +5,9 @@ import ImageView from '@/components/image-view';
 import ProductSugg from '@/components/product suggestions';
 import ProductInfo from '@/components/product-info';
 import { products } from "@/lib/shopData";
-import ProductPdf from '@/components/product pdf view';
-import ProductSilder from '@/components/product slider';
-import ProductVideo from '@/components/product Video';
+import ProductPdf from '@/components/productViewer/productPdfView';
+import ProductSilder from '@/components/productViewer/productSlider';
+import ProductVideo from '@/components/productViewer/productVideo';
 import { SkeletonCard } from '@/components/skeleton';
 
 function ProductPage() {
@@ -23,8 +23,6 @@ function ProductPage() {
             {/* BreadCrumb Component */}
             <div className="mt-16 pt-2">
                 <BreadCrumb
-                    page1={"All Products"}
-                    page3={"Sunbeam Tote Jeff"}
                 />
             </div>
 
