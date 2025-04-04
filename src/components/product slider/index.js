@@ -12,17 +12,16 @@ import { products } from '@/lib/shopData'
 import ProductPdf from '../product pdf view'
 import ProductVideo from '../product Video'
 
-
 function ProductSlider() {
   const filteredProducts = products.filter(product => product.title === "Sunbeam Tote Jeff")
 
   return (
-    <div>
+    <div className="flex justify-center mt-4">
       <Carousel className="w-[270px] h-[270px] mt-2">
         <CarouselContent>
           {filteredProducts.map((product, index) => (
-            <CarouselItem key={index}>
-              <div className="p-1">
+            <CarouselItem key={index} className="flex justify-center">
+              <div className="p-1 w-full">
                 <Card>
                   <CardContent className="flex aspect-square items-center justify-center p-0 rounded-lg bg-gray-100">
                     <Image
@@ -39,8 +38,8 @@ function ProductSlider() {
           ))}
 
           {/* Product PDF View Slide */}
-          <CarouselItem>
-            <div className="p-1">
+          <CarouselItem className="flex justify-center">
+            <div className="p-1 w-full">
               <Card>
                 <CardContent className="flex aspect-square items-center justify-center rounded-lg p-0 bg-gray-100">
                   <ProductPdf />
@@ -50,8 +49,8 @@ function ProductSlider() {
           </CarouselItem>
 
           {/* Product Video View Slide */}
-          <CarouselItem>
-            <div className="p-1">
+          <CarouselItem className="flex justify-center">
+            <div className="p-1 w-full">
               <Card>
                 <CardContent className="flex aspect-square items-center justify-center p-0 rounded-lg bg-gray-100">
                   <ProductVideo />
