@@ -5,9 +5,7 @@ import ImageView from '@/components/image-view';
 import ProductSugg from '@/components/product suggestions';
 import ProductInfo from '@/components/product-info';
 import { products } from "@/lib/shopData";
-import ProductPdf from '@/components/productViewer/productPdfView';
-import ProductSilder from '@/components/productViewer/productSlider';
-import ProductVideo from '@/components/productViewer/productVideo';
+import { ProductPdf,ProductSlider,ProductVideo } from '@/components/productViewer';
 import { SkeletonCard } from '@/components/skeleton';
 
 function ProductPage() {
