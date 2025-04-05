@@ -1,5 +1,5 @@
 import React from 'react'
-import BreadCrumb from '@/components/breadcrumb';
+import BreadCrumb from '@/components/breadCrumb';
 
 function ProductsPage() {
     return (

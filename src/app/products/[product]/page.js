@@ -1,12 +1,13 @@
 "use client"
 import React, { useState, useEffect } from 'react';
-import BreadCrumb from '@/components/breadcrumb';
-import ImageView from '@/components/image-view';
-import ProductSugg from '@/components/product suggestions';
-import ProductInfo from '@/components/product-info';
+import BreadCrumb from '@/components/breadCrumb';
+import ImageView from '@/components/imageView';
+import ProductSugg from '@/components/productSuggestions';
+import ProductInfo from '@/components/productInfo';
 import { products } from "@/lib/shopData";
-import { ProductPdf,ProductSlider,ProductVideo } from '@/components/productViewer';
+import { ProductPdf, ProductSlider, ProductVideo } from '@/components/productViewer';
 import { SkeletonCard } from '@/components/skeleton';
+import ImageGallery from '@/components/ImageGallery';
 
 function ProductPage() {
     const [loading, setLoading] = useState(true);
@@ -41,6 +42,9 @@ function ProductPage() {
             </div>
 
             <div className="flex col-span-3 my-2">
+                {/* Product option images */}
+                {/* <ImageGallery /> */}
+
                 {/* Product Pdf View */}
                 {/* <ProductPdf /> */}
 
@@ -48,7 +52,7 @@ function ProductPage() {
                 {/* <ProductVideo /> */}
 
                 {/* Product Slider */}
-                <ProductSilder />
+                <ProductSlider />
             </div>
 
             {/* Product Suggection */}
