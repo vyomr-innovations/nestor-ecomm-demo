@@ -1,5 +1,6 @@
-import React from 'react'
-import Image from 'next/image'
+/* eslint-disable @next/next/no-img-element */
+import * as React from "react"
+
 import { Card, CardContent } from "@/components/ui/card"
 import {
   Carousel,
@@ -8,23 +9,53 @@ import {
   CarouselNext,
   CarouselPrevious,
 } from "@/components/ui/carousel"
-import { products } from '@/lib/shopData'
-import ProductPdf from './productPdfView'
-import ProductVideo from './productVideo'
+import Image from "next/image"
 
-function ProductSlider() {
-  const filteredProducts = products.filter(product => product.title === "Sunbeam Tote Jeff")
-
+export default function ProductSlider({ images }) {
+  const renderContent = () => {
+    if (images.length == 1 || images.length == 2) {
+      return <CarouselContent className="flex items-center justify-center">
+        {images?.map((image, index) => (
+          <CarouselItem key={index} className="md:basis-1/2 lg:basis-1/3">
+            <div className="p-1">
+              <Card>
+                <CardContent className="p-1">
+                  <img src={image} alt={image} className="max-w-100 h-auto block rounded object-scale-down" />
+                </CardContent>
+              </Card>
+            </div>
+          </CarouselItem>
+        ))}
+      </CarouselContent>
+    } else {
+      return <CarouselContent>
+        {images?.map((image, index) => (
+          <CarouselItem key={index} className="md:basis-1/2 lg:basis-1/3">
+            <div className="p-1">
+              <Card>
+                <CardContent className="p-1">
+                  <img src={image} alt={image} className="max-w-100 h-auto block rounded object-scale-down" />
+                </CardContent>
+              </Card>
+            </div>
+          </CarouselItem>
+        ))}
+      </CarouselContent>
+    }
+  }
   return (
-    <div className="flex justify-center mt-4">
-      <Carousel className="w-[270px] h-[270px] mt-2">
-        
+    <Carousel
+      opts={{
+        align: "start",
+      }}
+      className="w-full max-w-sm"
+    >
 
-        <CarouselPrevious />
-        <CarouselNext />
-      </Carousel>
-    </div>
+      <CarouselContent className="flex items-center justify-center">
+        {renderContent()}
+      </CarouselContent>
+      <CarouselPrevious />
+      <CarouselNext />
+    </Carousel>
   )
 }
-
-export default ProductSlider;

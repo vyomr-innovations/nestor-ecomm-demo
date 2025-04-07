@@ -2,11 +2,11 @@
 import React from 'react'
 import { Button } from "@/components/ui/button";
 
-function ProductInfo() {
+function ProductInfo({product}) {
     return (
         <>
-            <h1 className='text-3xl font-bold'>Sunbeam Tote Jeff</h1>
-            <h2 className='text-2xl text-gray-500'>$25.00</h2>
+            <h1 className='text-3xl font-bold'>{product?.title}</h1>
+            <h2 className='text-2xl text-gray-500'>{product?.price}</h2>
 
             <p className='mt-5'>Brighten your day with this cheerful yellow bag. Its vibrant color and ample
                 storage space make it an excellent choice for shopping or day trips. Lightweight

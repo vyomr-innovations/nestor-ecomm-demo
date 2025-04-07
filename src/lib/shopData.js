@@ -1,233 +1,198 @@
+const baseUrl = "https://adn.nestortech.io/api/vi/67a06a45ea8a39c6628c71c3/"
 export const products = [
   {
-    cover: "/images/Sunbeam_Tote_Jeff.jpg",
+    cover: `${baseUrl}/SunbeamToteJeff/39eff1030679/dev/generic`,
     title: "Sunbeam Tote Jeff",
     price: "$25.00",
     category: "Accessories",
     thumbnails: [
-      "/images/Sunbeam_Tote_Jeff_1.jpg",
-      "/images/Sunbeam_Tote_Jeff_2.jpg",
-      "/images/Sunbeam_Tote_Jeff_3.jpg"
+      `${baseUrl}/SunbeamToteJeff/39eff1030679/dev/generic`,
+      `${baseUrl}/SunbeamToteJeff/250e2c02d523/dev/generic`,
+      `${baseUrl}/SunbeamToteJeff/7efa5ffb232a/dev/generic`,
+      `${baseUrl}/SunbeamToteJeff/ae73a9fb26c6/dev/generic`
     ]
   },
   {
-    cover: "/images/ShawodStrikeShoes.jpg",
+    cover: `${baseUrl}/ShadowStrideShoes/23374a1ebd47/dev/generic`,
     title: "Shawod Strike Shoes",
     price: "$20.00",
-    category: "Apparel", 
+    category: "Apparel",
     thumbnails: [
-      "/images/ShawodStrikeShoes_1.jpg",
-      "/images/ShawodStrikeShoes_2.jpg",
-      "/images/ShawodStrikeShoes_3.jpg"
+      `${baseUrl}/ShadowStrideShoes/23374a1ebd47/dev/generic`,
     ]
   },
   {
-    cover: "/images/Horizon_Gaze_Sunglasses.jpg",
+    cover: `${baseUrl}/HorizonGazeSunglasses/08f5e69e4e04/dev/generic`,
     title: "Horizon Gaze Sunglasses",
     price: "$20.00",
     category: "Apparel",
     thumbnails: [
-      "/images/Horizon_Gaze_Sunglasses_1.jpg",
-      "/images/Horizon_Gaze_Sunglasses_2.jpg",
-      "/images/Horizon_Gaze_Sunglasses_3.jpg"
+      `${baseUrl}/HorizonGazeSunglasses/08f5e69e4e04/dev/generic`,
     ]
   },
   {
-    cover: "/images/ZebraBlend_T-Shirt.jpg",
+    cover: `${baseUrl}/ZebraBlendTShirt/7f011a7fc68a/dev/generic`,
     title: "ZebraBlend T-Shirt",
     price: "$55.00",
     category: "Apparel",
     thumbnails: [
-      "/images/ZebraBlend_T-Shirt_1.jpg",
-      "/images/ZebraBlend_T-Shirt_2.jpg",
-      "/images/ZebraBlend_T-Shirt_3.jpg"
+      `${baseUrl}/ZebraBlendTShirt/7f011a7fc68a/dev/generic`,
+      `${baseUrl}/ZebraBlendTShirt/5c586c8192cc/dev/generic`,
     ]
   },
   {
-    cover: "/images/Gloves_With_holes.jpg",
+    cover: `${baseUrl}/Gloveswithholes/744c87e3b6ce/dev/generic`,
     title: "Gloves With holes",
     price: "$1,299.00",
     category: "Apparel",
     thumbnails: [
-      "/images/Gloves_With_holes_1.jpg",
-      "/images/Gloves_With_holes_2.jpg",
-      "/images/Gloves_With_holes_3.jpg"
+      `${baseUrl}/Gloveswithholes/744c87e3b6ce/dev/generic`,
     ]
   },
   {
-    cover: "/images/Aqua_Stride_Bottle.jpg",
+    cover: `${baseUrl}/AquaStrideBottle/7540268c53c3/dev/generic`,
     title: "Aqua Stride Bottle",
     price: "$20.00",
     category: "Accessories",
     thumbnails: [
-      "/images/Aqua_Stride_Bottle_1.jpg",
-      "/images/Aqua_Stride_Bottle_2.jpg",
-      "/images/Aqua_Stride_Bottle_3.jpg"
+      `${baseUrl}/AquaStrideBottle/7540268c53c3/dev/generic`,
     ]
   },
   {
-    cover: "/images/One_shoe.png",
+    cover: `${baseUrl}/One_shoe/5601910ed249/dev/web`,
     title: "One shoe",
     price: "$299.00",
     category: "Apparel",
     thumbnails: [
-      "/images/One_shoe_1.png",
-      "/images/One_shoe_2.png",
-      "/images/One_shoe_3.png"
+      `${baseUrl}/One_shoe/5601910ed249/dev/web`,
     ]
   },
   {
-    cover: "/images/Rolling_Travel_Suitcase.jpg",
+    cover: `${baseUrl}/Rolling_Travel_Suitcase/ff4155412f9e/dev/web`,
     title: "Rolling Travel Suitcase",
     price: "$2,200.00",
     category: "Apparel",
     thumbnails: [
-      "/images/Rolling_Travel_Suitcase_1.jpg",
-      "/images/Rolling_Travel_Suitcase_2.jpg",
-      "/images/Rolling_Travel_Suitcase_3.jpg"
+      `${baseUrl}/Rolling_Travel_Suitcase/ff4155412f9e/dev/web`,
     ]
   },
   {
-    cover: "/images/Arctic_Circle_Neck_Warmer.jpg",
+    cover: `${baseUrl}/ArcticCircleNeckWarmer/94f874807ef6/dev/generic`,
     title: "Arctic Circle Neck Warmer",
     price: "$120.00",
     category: "Apparel",
     thumbnails: [
-      "/images/Arctic_Circle_Neck_Warmer_1.jpg",
-      "/images/Arctic_Circle_Neck_Warmer_2.jpg",
-      "/images/Arctic_Circle_Neck_Warmer_3.jpg"
+      `${baseUrl}/ArcticCircleNeckWarmer/94f874807ef6/dev/generic`,
     ]
   },
   {
-    cover: "/images/Another_handbag.png",
+    cover: `${baseUrl}/Anotherhandbag/4dfe02122855/dev/generic`,
     title: "Another handbag",
     price: "$1,999.00",
     category: "Accessories",
     thumbnails: [
-      "/images/Another_handbag_1.png",
-      "/images/Another_handbag_2.png",
-      "/images/Another_handbag_3.png"
+      `${baseUrl}/Anotherhandbag/4dfe02122855/dev/generic`,
     ]
   },
   {
-    cover: "/images/Watch.jpg",
+    cover: `${baseUrl}/Watch/da8091265bd4/dev/generic`,
     title: "Watch",
     price: "$249,999.00",
     category: "Accessories",
     thumbnails: [
-      "/images/Watch_1.jpg",
-      "/images/Watch_2.jpg",
-      "/images/Watch_3.jpg"
+      `${baseUrl}/Watch/da8091265bd4/dev/generic`,
     ]
   },
   {
-    cover: "/images/All_Weather_Dry_Bag.png",
+    cover: `${baseUrl}/AllWeatherDryBag/a011faf27bd8/dev/generic`,
     title: "All Weather Dry Bag",
     price: "$500.00",
     category: "Accessories",
     thumbnails: [
-      "/images/All_Weather_Dry_Bag_1.png",
-      "/images/All_Weather_Dry_Bag_2.png",
-      "/images/All_Weather_Dry_Bag_3.png"
+      `${baseUrl}/AllWeatherDryBag/a011faf27bd8/dev/generic`,
     ]
   },
   {
-    cover: "/images/Twin_Tight_Belts.jpg",
+    cover: `${baseUrl}/TwinTightBelts/2a864c77d4a5/dev/generic`,
     title: "Twin Tight Belts",
     price: "$45.00",
     category: "Accessories",
     thumbnails: [
-      "/images/Twin_Tight_Belts_1.jpg",
-      "/images/Twin_Tight_Belts_2.jpg",
-      "/images/Twin_Tight_Belts_3.jpg"
+      `${baseUrl}/TwinTightBelts/2a864c77d4a5/dev/generic`,
     ]
   },
   {
-    cover: "/images/EchoBass_Headphones.jpg",
+    cover: `${baseUrl}/EchoBassHeadphones/2cd62655f0ec/dev/generic`,
     title: "EchoBass Headphones",
     price: "$4,110.00",
     category: "Accessories",
     thumbnails: [
-      "/images/EchoBass_Headphones_1.jpg",
-      "/images/EchoBass_Headphones_2.jpg",
-      "/images/EchoBass_Headphones_3.jpg"
+      `${baseUrl}/EchoBassHeadphones/2cd62655f0ec/dev/generic`
     ]
   },
   {
-    cover: "/images/Azure_Escape_Bag.jpg",
+    cover: `${baseUrl}/AzureEscapeBag/eda1963225da/dev/generic`,
     title: "Azure Escape Bag",
     price: "$250.00",
     category: "Accessories",
     thumbnails: [
-      "/images/Azure_Escape_Bag_1.jpg",
-      "/images/Azure_Escape_Bag_2.jpg",
-      "/images/Azure_Escape_Bag_3.jpg"
+      `${baseUrl}/AzureEscapeBag/eda1963225da/dev/generic`,
+      `${baseUrl}/AzureEscapeBag/7f465ea8e3b1/dev/generic`,
     ]
   },
   {
-    cover: "/images/Echoes_of_Tomorrow.jpg",
+    cover: `${baseUrl}/EchoesofTomorrow/50e334b0459b/dev/generic`,
     title: "Echoes of Tomorrow",
     price: "$110.00",
     category: "Digital",
     thumbnails: [
-      "/images/Echoes_of_Tomorrow_1.jpg",
-      "/images/Echoes_of_Tomorrow_2.jpg",
-      "/images/Echoes_of_Tomorrow_3.jpg"
+      `${baseUrl}/EchoesofTomorrow/50e334b0459b/dev/generic`
     ]
   },
   {
-    cover: "/images/Workspace_Carft_Pro.jpg",
+    cover: `${baseUrl}/WorkspaceCraftPro/0adcc9141b11/dev/generic`,
     title: "Workspace Craft Pro",
     price: "$150.00",
     category: "Digital",
     thumbnails: [
-      "/images/Workspace_Carft_Pro_1.jpg",
-      "/images/Workspace_Carft_Pro_2.jpg",
-      "/images/Workspace_Carft_Pro_3.jpg"
+      `${baseUrl}/WorkspaceCraftPro/0adcc9141b11/dev/generic`
     ]
   },
   {
-    cover: "/images/Chestnut_Carryall_Bag.jpg",
+    cover: `${baseUrl}/ChestnutCarryallBag/2750668c06f2/dev/generic`,
     title: "Chestnut Carryall Bag",
     price: "$10.00",
     category: "product suggestions",
     thumbnails: [
-      "/images/Chestnut_Carryall_Bag_1.jpg",
-      "/images/Chestnut_Carryall_Bag_2.jpg",
-      "/images/Chestnut_Carryall_Bag_3.jpg"
+      `${baseUrl}/ChestnutCarryallBag/2750668c06f2/dev/generic`
     ]
   },
   {
-    cover: "/images/Versatile_Tote_Backpack.png",
+    cover: `${baseUrl}/VersatileToteBackpack/cf574559ef5b/dev/generic`,
     title: "Veratile Tote Backpack",
     price: "$1,000.00",
     category: "product suggestions",
     thumbnails: [
-      "/images/Versatile_Tote_Backpack_1.png",
-      "/images/Versatile_Tote_Backpack_2.png",
-      "/images/Versatile_Tote_Backpack_3.png"
+      `${baseUrl}/VersatileToteBackpack/cf574559ef5b/dev/generic`
     ]
   },
   {
-    cover: "/images/Eco_friendly_Tote.png",
+    cover: `${baseUrl}/EcoFriendlyTote/5083aed15d38/dev/generic`,
     title: "Eco friendly Tote",
     price: "$300.00",
     category: "product suggestions",
     thumbnails: [
-      "/images/Eco_friendly_Tote_1.png",
-      "/images/Eco_friendly_Tote_2.png",
-      "/images/Eco_friendly_Tote_3.png"
+      `${baseUrl}/EcoFriendlyTote/5083aed15d38/dev/generic`
     ]
   },
   {
-    cover: "/images/Classic_Messenger_Bag.png",
+    cover: `${baseUrl}/ClassicMessengerBag/11e24019f80f/dev/generic`,
     title: "Classic Messenger Bag",
     price: "$700.00",
     category: "product suggestions",
     thumbnails: [
-      "/images/Classic_Messenger_Bag_1.png",
-      "/images/Classic_Messenger_Bag_2.png",
-      "/images/Classic_Messenger_Bag_3.png"
+      `${baseUrl}/ClassicMessengerBag/11e24019f80f/dev/generic`,
+
     ]
   }
 ]
