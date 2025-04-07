@@ -48,7 +48,7 @@ function ProductPage() {
                 {/* <ProductVideo /> */}
 
                 {/* Product Slider */}
-                <ProductSilder />
+                <ProductSlider />
             </div>
 
             {/* Product Suggection */}
