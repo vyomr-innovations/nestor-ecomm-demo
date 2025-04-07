@@ -1,13 +1,14 @@
 /* eslint-disable react-hooks/exhaustive-deps */
 "use client"
 import React, { useState, useEffect } from 'react';
-import BreadCrumb from '@/components/breadcrumb';
-import ImageView from '@/components/image-view';
-import ProductSugg from '@/components/product suggestions';
-import ProductInfo from '@/components/product-info';
+import BreadCrumb from '@/components/breadCrumb';
+import ImageView from '@/components/imageView';
+import ProductSugg from '@/components/productSuggestions';
+import ProductInfo from '@/components/productInfo';
 import { products } from "@/lib/shopData";
 import { ProductPdf, ProductSlider, ProductVideo } from '@/components/productViewer';
 import { SkeletonCard } from '@/components/skeleton';
+import ImageGallery from '@/components/ImageGallery';
 
 function ProductPage({ params }) {
     const [loading, setLoading] = useState(true);

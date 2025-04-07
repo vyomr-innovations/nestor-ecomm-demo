@@ -7,7 +7,7 @@ function ProductSugg({ cover, title, price }) {
     return (
         <>
             <div className='flex items-center m-2'>
-                <Card className="border-none w-50">
+                <Card className="border-none w-50 shadow-md hover:scale-105 transition-transform duration-300">
                     <Image
                         src={cover}
                         width={300}

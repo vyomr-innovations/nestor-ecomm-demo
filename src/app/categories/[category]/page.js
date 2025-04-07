@@ -1,6 +1,6 @@
 "use client"
 import ProductCard from '@/components/products/productCard';
-import BreadCrumb from '@/components/breadcrumb';
+import BreadCrumb from '@/components/breadCrumb';
 import { products } from '@/lib/shopData';
 import React, { useEffect, useState } from 'react'
 function CategoriesPage({ params }) {
