@@ -17,7 +17,9 @@ function Searchbar() {
             </div>
 
             <div className="flex items-center gap-3 sm:gap-4">
-                <ShoppingBag className="cursor-pointer hover:text-gray-500" />
+                <Link href="./yourcart">
+                    <ShoppingBag className="cursor-pointer hover:text-gray-500" />
+                </Link>
                 <Link href="./userlogin">
                     <User2Icon className="cursor-pointer hover:text-gray-500" />
                 </Link>
