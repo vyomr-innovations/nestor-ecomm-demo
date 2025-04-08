@@ -31,36 +31,39 @@ const components = [
     }
 ];
 export default function Header() {
+    const [isMounted, setIsMounted] = React.useState(false);
+
+    React.useEffect(() => {
+        setIsMounted(true);
+    }, []);
+
+    if (!isMounted) {
+        return null;
+    }
     return (
         <header>
             <nav className="w-full fixed h-16 bg-white shadow-md p-4 flex justify-between items-center z-50">
                 <div className="flex fixed flex-col p-5 m-auto">
                     <NavigationMenu>
                         <NavigationMenuList>
-                            <NavigationMenuItem className="flex items-center justify-between w-full relative">
+                            <div className="flex items-center justify-between w-full relative">
                                 <h2 className="font-bold text-lg">InfinityGadgets</h2>
-                                {components.map((component, index) => {
-                                    return (
-                                        <Link
-                                            key={index}
+                                {components.map((component, index) => (
+                                    <NavigationMenuItem key={index}>
+                                        <NavigationMenuLink
                                             href={component.href}
-                                            legacyBehavior
-                                            passHref
+                                            className={cn(
+                                                "ml-5 hover:bg-gray-100 transition-all font-base px-4 py-2 rounded-md"
+                                            )}
                                         >
-                                            <NavigationMenuLink
-                                                className={cn(
-                                                    "ml-5 hover:bg-gray-100 transition-all font-base  px-4 py-2 rounded-md"
-                                                )}
-                                            >
-                                                {component.title}
-                                            </NavigationMenuLink>
-                                        </Link>
-                                    );
-                                })}
-                                <NavigationMenuLink>
+                                            {component.title}
+                                        </NavigationMenuLink>
+                                    </NavigationMenuItem>
+                                ))}
+                                <div className="ml-5">
                                     <Searchbar />
-                                </NavigationMenuLink>
-                            </NavigationMenuItem>
+                                </div>
+                            </div>
                         </NavigationMenuList>
                     </NavigationMenu>
                 </div>

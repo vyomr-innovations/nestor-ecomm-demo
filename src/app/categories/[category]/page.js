@@ -2,17 +2,22 @@
 import ProductCard from '@/components/products/productCard';
 import BreadCrumb from '@/components/breadCrumb';
 import { products } from '@/lib/shopData';
-import React, { useEffect, useState } from 'react'
+import React, { useEffect, useState, useCallback } from 'react'
+import { useRouter } from 'next/navigation';
 function CategoriesPage({ params }) {
-    const [categoryId, setCatogoryId] = useState()
-    const getId = async () => {
+    const router = useRouter();
+    const [categoryId, setCatogoryId] = useState();
+    
+    const getId = useCallback(async () => {
         const id = (await params).category;
         setCatogoryId(id);
-    }
+    }, [params]);
+    
     const filteredItems = products.filter(product => product.category === categoryId);
+    
     useEffect(() => {
-        getId()
-    }, [])
+        getId();
+    }, [getId])
     return (
         <>
             {/* BreadCrumb Component */}
@@ -33,9 +38,11 @@ function CategoriesPage({ params }) {
                     return (
                         <ProductCard
                             key={index}
+                            id={product.title.toLowerCase().replace(/\s+/g, '-')}
                             cover={product.cover}
                             title={product.title}
                             price={product.price}
+                            onClick={() => router.push(`/products/${product.title.replace(/\s+/g, "-")}`)}                            
                         />
                     )
                 }) : null

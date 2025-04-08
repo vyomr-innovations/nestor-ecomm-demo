@@ -18,9 +18,9 @@ function ProductSugg({ cover, title, price }) {
                     />
                     <CardFooter>
                         <div className="flex flex-col p-1 m-1">
-                            <h3 className='font-semibold text-lg'>
-                                <Link href={"#"}>{title}</Link>
-                            </h3>
+                            <Link href={`/products/${title.replace(/\s+/g, '-')}`} className='no-underline'>
+                                <h3 className='font-semibold text-lg hover:text-blue-600'>{title}</h3>
+                            </Link>
                             <p>{price}</p>
                         </div>
                     </CardFooter>

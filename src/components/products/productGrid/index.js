@@ -13,7 +13,7 @@ function ProductGrid() {
                         onClick={() =>
                             router.push(`/products/${product.title.replace(/\s+/g, "-")}`)
                         }
-                        cover={product.cover}
+                        cover={product.cover.url}
                         title={product.title}
                         price={product.price}
                     />

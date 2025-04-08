@@ -1,9 +1,19 @@
-import React from 'react';
+"use client";
+import React, { useState, useEffect } from 'react';
 import { Input } from '@/components/ui/input';
 import { Search, ShoppingBag, User2Icon } from 'lucide-react';
 import Link from 'next/link';
 
 function Searchbar() {
+    const [isMounted, setIsMounted] = useState(false);
+
+    useEffect(() => {
+        setIsMounted(true);
+    }, []);
+
+    if (!isMounted) {
+        return null;
+    }
     return (
         <header className="fixed top-4 right-5 flex items-center gap-4 sm:gap-6 z-50">
             <div className="relative hidden md:flex">
@@ -17,10 +27,10 @@ function Searchbar() {
             </div>
 
             <div className="flex items-center gap-3 sm:gap-4">
-                <Link href="./yourcart">
+                <Link href="/cart">
                     <ShoppingBag className="cursor-pointer hover:text-gray-500" />
                 </Link>
-                <Link href="./userlogin">
+                <Link href="/login">
                     <User2Icon className="cursor-pointer hover:text-gray-500" />
                 </Link>
             </div>

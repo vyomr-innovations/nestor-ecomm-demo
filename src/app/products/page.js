@@ -20,10 +20,11 @@ function ProductsPage() {
                         return (
                             <ProductCard
                                 key={index}
+                                id={product.title.toLowerCase().replace(/\s+/g, '-')} // Fallback to index if id not available
                                 onClick={() =>
                                     router.push(`/products/${product.title.replace(/\s+/g, "-")}`)
                                 }
-                                cover={product.cover}
+                                cover={product.cover.url}
                                 title={product.title}
                                 price={product.price}
                             />

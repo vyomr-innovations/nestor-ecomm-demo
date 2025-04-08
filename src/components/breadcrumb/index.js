@@ -12,8 +12,8 @@ export default function BreadCrumb() {
     { label: "Home", href: "/" },
     ...pathSegments.map((segment, index) => ({
       label: segment.charAt(0).toUpperCase() + segment.slice(1),
-      href: `/${pathSegments.slice(0, index + 1).join("/")}`
-    }))
+      href: `/${pathSegments.slice(0, index + 1).join("/")}`,
+    })),
   ];
 
   return (
@@ -22,7 +22,9 @@ export default function BreadCrumb() {
         <div key={item.href} className="flex items-center">
           {index > 0 && <ChevronRight className="h-4 w-4 mx-2" />}
           {index === breadcrumbItems.length - 1 ? (
-            <span className="text-foreground">{item.label.replace(/-/g, " ")}</span>
+            <span className="text-foreground">
+              {item.label.replace(/-/g, " ")}
+            </span>
           ) : (
             <Link href={item.href} className="hover:text-foreground">
               {item.label}

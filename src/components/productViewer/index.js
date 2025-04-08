@@ -1,9 +1,5 @@
 import ProductSlider from "./productSlider";
-import ProductPdf from "./productPdfView";
+import PDFViewer from "../PDFViewer";
 import ProductVideo from "./productVideo";
 
-export {
-    ProductSlider,
-    ProductVideo,
-    ProductPdf
-}
+export { ProductSlider, ProductVideo, PDFViewer };
