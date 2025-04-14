@@ -30,7 +30,7 @@ function Searchbar() {
                 <Link href="/cart">
                     <ShoppingBag className="cursor-pointer hover:text-gray-500" />
                 </Link>
-                <Link href="/login">
+                <Link href="/userlogin">
                     <User2Icon className="cursor-pointer hover:text-gray-500" />
                 </Link>
             </div>
