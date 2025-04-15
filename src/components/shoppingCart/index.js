@@ -59,7 +59,7 @@ export function ShoppingCart() {
                             <TableRow key={index}>
                                 <TableCell>
                                     <Image
-                                        src={product.cover}
+                                        src={product.cover.url}
                                         alt={product.title}
                                         width={100}
                                         height={100}

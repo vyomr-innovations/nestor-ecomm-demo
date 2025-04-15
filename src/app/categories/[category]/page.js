@@ -39,7 +39,7 @@ function CategoriesPage({ params }) {
                         <ProductCard
                             key={index}
                             id={product.title.toLowerCase().replace(/\s+/g, '-')}
-                            cover={product.cover}
+                            cover={product.cover.url}
                             title={product.title}
                             price={product.price}
                             onClick={() => router.push(`/products/${product.title.replace(/\s+/g, "-")}`)}                            
