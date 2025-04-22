@@ -3,6 +3,7 @@ import { useCart } from "@/lib/cartContext";
 import { Button } from "./ui/button";
 import { Minus, Plus, Trash2 } from "lucide-react";
 import { useState, useEffect } from "react";
+import Link from "next/link";
 
 export function ShoppingCart() {
   const [isMounted, setIsMounted] = useState(false);
@@ -20,7 +21,9 @@ export function ShoppingCart() {
     return (
       <div className="flex flex-col items-center justify-center min-h-[400px]">
         <h2 className="text-2xl font-semibold mb-4">Your cart is empty</h2>
-        <p className="text-gray-500">Add some products to your cart to see them here.</p>
+        <p className="text-gray-500">
+          Add some products to your cart to see them here.
+        </p>
       </div>
     );
   }
@@ -43,7 +46,10 @@ export function ShoppingCart() {
               <div className="flex-1">
                 <h3 className="font-semibold">{item.title}</h3>
                 <p className="text-gray-600">
-                  ${typeof item.price === 'number' ? item.price.toFixed(2) : parseFloat(item.price.replace(/[$,]/g, '')).toFixed(2)}
+                  $
+                  {typeof item.price === "number"
+                    ? item.price.toFixed(2)
+                    : parseFloat(item.price.replace(/[$,]/g, "")).toFixed(2)}
                 </p>
               </div>
               <div className="flex items-center gap-2">
@@ -89,11 +95,19 @@ export function ShoppingCart() {
               <div className="border-t pt-2 mt-2">
                 <div className="flex justify-between font-semibold">
                   <span>Total</span>
-                  <span>${getCartTotal().toLocaleString('en-US', { minimumFractionDigits: 2, maximumFractionDigits: 2 })}</span>
+                  <span>
+                    $
+                    {getCartTotal().toLocaleString("en-US", {
+                      minimumFractionDigits: 2,
+                      maximumFractionDigits: 2,
+                    })}
+                  </span>
                 </div>
               </div>
             </div>
-            <Button className="w-full mt-6">Proceed to Checkout</Button>
+            <Link href="/checkout">
+              <Button className="w-full mt-6">Proceed to Checkout</Button>
+            </Link>
           </div>
         </div>
       </div>

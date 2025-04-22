@@ -103,7 +103,9 @@ export const products = [
     title: "Watch",
     price: "$249,999.00",
     category: "Accessories",
-    thumbnails: [{ url: `${baseUrl}/Watch/da8091265bd4/dev/generic` }]
+    thumbnails: [{ url: `${baseUrl}/Watch/da8091265bd4/dev/generic` },
+    { url: `${baseUrl}/Watch/47608fe86459/dev/generic` }
+    ]
   },
   {
     cover: { url: `${baseUrl}/AllWeatherDryBag/a011faf27bd8/dev/generic` },
@@ -127,7 +129,8 @@ export const products = [
     price: "$4,110.00",
     category: "Accessories",
     thumbnails: [
-      { url: `${baseUrl}/EchoBassHeadphones/2cd62655f0ec/dev/generic` }
+      { url: `${baseUrl}/EchoBassHeadphones/2cd62655f0ec/dev/generic` },
+      { url: `${baseUrl}/EchoBassHeadphones/7226f7b4e309/dev/generic` }
     ]
   },
   {

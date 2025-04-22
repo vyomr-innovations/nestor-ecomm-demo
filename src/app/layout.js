@@ -3,8 +3,8 @@ import "./globals.css";
 import Header from "@/components/header";
 import Footer from "@/components/footer";
 import { CartProvider } from "@/lib/cartContext";
+import { AuthProvider } from "./context/auth-context";
 import { Toaster } from "@/components/ui/toaster";
-
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -28,15 +28,16 @@ export default function RootLayout({ children }) {
         suppressHydrationWarning
         className={`${geistSans.variable} ${geistMono.variable} antialiased`}
       >
-        <CartProvider>
-          <Header />
-          <main className="w-full px-16 py-2 justify-center flex flex-col">
-            {children}
-          </main>
-          {/* Footer */}
-          <Footer />
-          <Toaster />
-        </CartProvider>
+        <AuthProvider>
+          <CartProvider>
+            <Header />
+            <main className="w-full px-16 py-2 justify-center flex flex-col">
+              {children}
+            </main>
+            <Footer />
+            <Toaster />
+          </CartProvider>
+        </AuthProvider>
       </body>
     </html>
   );
