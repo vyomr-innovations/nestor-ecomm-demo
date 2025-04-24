@@ -22,17 +22,12 @@ function CategoriesPage() {
             <div className="grid grid-cols-2 gap-3">
                 <CategoryGrid
                     title={"Apparel"}
-                    cover={"/images/apparel.avif"}
+                    cover={"https://adn.nestortech.io/api/va/67a06a45ea8a39c6628c71c3/Apparel/dev/generic"}
                     description={"Shop now"}
                 />
                 <CategoryGrid
                     title={"Accessories"}
-                    cover={"/images/accessories.avif"}
-                    description={"Shop now"}
-                />
-                <CategoryGrid
-                    title={"Digital"}
-                    cover={"/images/Workspace_Carft_Pro.jpg"}
+                    cover={"https://adn.nestortech.io/api/va/67a06a45ea8a39c6628c71c3/Accessories/dev/generic"}
                     description={"Shop now"}
                 />
             </div>
