@@ -71,7 +71,7 @@ function Footer() {
                         <tbody className='text-sm text-gray-800'>
                             <tr>
                                 <td className="px-4 py-2"><a href="#" className="hover:underline">Apparel</a></td>
-                                <td className="px-4 py-2"><a href="#" className="hover:underline">Contact Us</a></td>
+                                <td className="px-4 py-2"><a href="/contactus" className="hover:underline">Contact Us</a></td>
                             </tr>
                             <tr>
                                 <td className="px-4 py-2"><a href="#" className="hover:underline">Accessories</a></td>
