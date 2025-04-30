@@ -33,6 +33,24 @@ export function Login() {
     const [message, setMessage] = useState("")
     const [messageColor, setMessageColor] = useState("")
 
+    // Handle email validation as user types
+    const handleEmailChange = (e) => {
+        const newEmail = e.target.value
+        setEmail(newEmail)
+
+        const emailValidation = z.string().email("Invalid email format").safeParse(newEmail)
+
+        if (!emailValidation.success) {
+            setEmailError(emailValidation.error.errors[0].message)
+        } else {
+            setEmailError("")
+        }
+    }
+
+    const handlePasswordChange = (e) => {
+        setPassword(e.target.value)
+    }
+
     const handleLogin = (e) => {
         e.preventDefault()
 
@@ -70,7 +88,7 @@ export function Login() {
                                     type="email"
                                     placeholder="xyz@gmail.com"
                                     value={email}
-                                    onChange={(e) => setEmail(e.target.value)}
+                                    onChange={handleEmailChange}
                                     required
                                 />
                                 {emailError && <p className="text-sm text-red-500">{emailError}</p>}
@@ -83,7 +101,7 @@ export function Login() {
                                     type="password"
                                     placeholder="Password"
                                     value={password}
-                                    onChange={(e) => setPassword(e.target.value)}
+                                    onChange={handlePasswordChange}
                                     required
                                 />
                                 {passwordError && <p className="text-sm text-red-500">{passwordError}</p>}

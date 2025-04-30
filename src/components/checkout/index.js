@@ -28,15 +28,19 @@ const formSchema = z.object({
 
 export default function CheckoutPage() {
     const [country, setCountry] = useState("")
-    const [paymentStatus, setPaymentStatus] = useState(null) // null | "success" | "error"
+    const [paymentStatus, setPaymentStatus] = useState(null)
 
     const {
         register,
         handleSubmit,
+        watch,
         formState: { errors },
     } = useForm({
         resolver: zodResolver(formSchema),
+        mode: "onChange", // ✅ Live validation
     })
+
+    const emailValue = watch("email")
 
     const onSubmit = (data) => {
         if (!country) {
@@ -44,7 +48,6 @@ export default function CheckoutPage() {
             return
         }
 
-        // Simulate success response
         const isSuccess = true
 
         if (isSuccess) {
@@ -68,7 +71,11 @@ export default function CheckoutPage() {
                                 <div>
                                     <Label htmlFor="email">Email</Label>
                                     <Input id="email" type="email" {...register("email")} />
-                                    {errors.email && <p className="text-red-500 text-sm">{errors.email.message}</p>}
+                                    {errors.email ? (
+                                        <p className="text-red-500 text-sm">{errors.email.message}</p>
+                                    ) : emailValue?.length > 0 ? (
+                                        <p className="text-green-600 text-sm">Valid Email Id</p>
+                                    ) : null}
                                 </div>
                                 <div>
                                     <Label htmlFor="name">Full Name</Label>
@@ -120,7 +127,9 @@ export default function CheckoutPage() {
                                         placeholder="1234 5678 9012 3456"
                                         className="pr-20 p-6"
                                     />
-                                    {errors.cardNumber && <p className="text-red-500 text-sm">{errors.cardNumber.message}</p>}
+                                    {errors.cardNumber && (
+                                        <p className="text-red-500 text-sm">{errors.cardNumber.message}</p>
+                                    )}
                                     <div className="absolute right-3 top-[38px] flex items-center space-x-1">
                                         <Image src="/images/visacard.png" alt="Visa" width={28} height={24} />
                                         <Image src="/images/mastercard.png" alt="MasterCard" width={28} height={24} />
@@ -131,25 +140,31 @@ export default function CheckoutPage() {
                                     <div>
                                         <Label htmlFor="exp-date">Expiration Date</Label>
                                         <Input id="exp-date" type="text" {...register("expDate")} />
-                                        {errors.expDate && <p className="text-red-500 text-sm">{errors.expDate.message}</p>}
+                                        {errors.expDate && (
+                                            <p className="text-red-500 text-sm">{errors.expDate.message}</p>
+                                        )}
                                     </div>
                                     <div>
                                         <Label htmlFor="cvc">Security Code</Label>
                                         <Input id="cvc" type="password" {...register("cvc")} />
-                                        {errors.cvc && <p className="text-red-500 text-sm">{errors.cvc.message}</p>}
+                                        {errors.cvc && (
+                                            <p className="text-red-500 text-sm">{errors.cvc.message}</p>
+                                        )}
                                     </div>
-
                                 </div>
                             </div>
 
                             {/* Pay Now Button */}
-                            <Button type="submit" className="w-full bg-black text-white hover:bg-black/80 rounded-full">
+                            <Button
+                                type="submit"
+                                className="w-full bg-black text-white hover:bg-black/80 rounded-full"
+                            >
                                 Pay Now
                             </Button>
                         </CardContent>
                     </Card>
 
-                    {/* ✅ Bottom Status Message */}
+                    {/* Status Message */}
                     {paymentStatus === "success" && (
                         <p className="text-green-600 font-medium mt-4 text-center">
                             ✅ Payment successfully done!
