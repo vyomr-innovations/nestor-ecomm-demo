@@ -37,7 +37,7 @@ export default function ContactUs() {
     }
 
     return (
-        <div className="min-h-screen flex items-center justify-center bg-gray-50 p-4 mt-12">
+        <div className="min-h-screen flex items-center justify-center bg-gray-50 p-4 mt-16">
             <Card className="w-full max-w-lg shadow-xl rounded-2xl p-6">
                 <CardContent>
                     <h2 className="text-2xl font-bold mb-6 text-center">Contact Us</h2>

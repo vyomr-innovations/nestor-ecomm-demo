@@ -2,6 +2,7 @@
 import * as React from "react"
 import { useState } from "react"
 import { z } from "zod"
+import { useRouter } from "next/navigation"
 import { Button } from "@/components/ui/button"
 import {
     Card,
@@ -26,30 +27,14 @@ const loginSchema = z.object({
 })
 
 export function Login() {
+    const router = useRouter()
+
     const [email, setEmail] = useState("")
     const [password, setPassword] = useState("")
     const [emailError, setEmailError] = useState("")
     const [passwordError, setPasswordError] = useState("")
     const [message, setMessage] = useState("")
     const [messageColor, setMessageColor] = useState("")
-
-    // Handle email validation as user types
-    const handleEmailChange = (e) => {
-        const newEmail = e.target.value
-        setEmail(newEmail)
-
-        const emailValidation = z.string().email("Invalid email format").safeParse(newEmail)
-
-        if (!emailValidation.success) {
-            setEmailError(emailValidation.error.errors[0].message)
-        } else {
-            setEmailError("")
-        }
-    }
-
-    const handlePasswordChange = (e) => {
-        setPassword(e.target.value)
-    }
 
     const handleLogin = (e) => {
         e.preventDefault()
@@ -65,10 +50,24 @@ export function Login() {
             return
         }
 
-        setEmailError("")
-        setPasswordError("")
-        setMessage("Login successful!")
-        setMessageColor("text-green-600")
+        // Replace with your admin credentials
+        const ADMIN_EMAIL = "nestortech.io@gmail.com"
+        const ADMIN_PASSWORD = "Nestor@123"
+
+        if (email === ADMIN_EMAIL && password === ADMIN_PASSWORD) {
+            setEmailError("")
+            setPasswordError("")
+            setMessage("Login successful!")
+            setMessageColor("text-green-600")
+
+            // Redirect to /UserProfile
+            setTimeout(() => {
+                router.push("./profile")
+            }, 500)
+        } else {
+            setMessage("Invalid admin credentials.")
+            setMessageColor("text-red-500")
+        }
     }
 
     return (
@@ -76,32 +75,32 @@ export function Login() {
             <Card className="w-[400px] p-4">
                 <CardHeader>
                     <CardTitle className="text-3xl">Login</CardTitle>
-                    <CardDescription>Enter your email below to login to your account</CardDescription>
+                    <CardDescription>Enter your admin credentials to access the site</CardDescription>
                 </CardHeader>
                 <CardContent>
                     <form onSubmit={handleLogin}>
                         <div className="grid w-full items-center gap-4">
                             <div className="flex flex-col space-y-1.5">
-                                <Label htmlFor="Email">Email</Label>
+                                <Label htmlFor="email">Email</Label>
                                 <Input
-                                    id="Email"
+                                    id="email"
                                     type="email"
-                                    placeholder="xyz@gmail.com"
+                                    placeholder="login@example.com"
                                     value={email}
-                                    onChange={handleEmailChange}
+                                    onChange={(e) => setEmail(e.target.value)}
                                     required
                                 />
                                 {emailError && <p className="text-sm text-red-500">{emailError}</p>}
                             </div>
 
                             <div className="flex flex-col space-y-1.5">
-                                <Label htmlFor="Password">Password</Label>
+                                <Label htmlFor="password">Password</Label>
                                 <Input
-                                    id="Password"
+                                    id="password"
                                     type="password"
                                     placeholder="Password"
                                     value={password}
-                                    onChange={handlePasswordChange}
+                                    onChange={(e) => setPassword(e.target.value)}
                                     required
                                 />
                                 {passwordError && <p className="text-sm text-red-500">{passwordError}</p>}
