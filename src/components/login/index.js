@@ -62,7 +62,7 @@ export function Login() {
 
             // Redirect to /UserProfile
             setTimeout(() => {
-                router.push("./profile")
+                router.push("/profile")
             }, 500)
         } else {
             setMessage("Invalid admin credentials.")

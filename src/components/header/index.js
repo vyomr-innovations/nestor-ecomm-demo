@@ -2,6 +2,7 @@
 import * as React from "react";
 import Link from "next/link";
 import { cn } from "@/lib/utils";
+import Image from "next/image";
 import {
     NavigationMenu,
     NavigationMenuContent,
@@ -30,6 +31,7 @@ const components = [
         href: "/categories/Digital"
     }
 ];
+
 export default function Header() {
     const [isMounted, setIsMounted] = React.useState(false);
 
@@ -40,6 +42,7 @@ export default function Header() {
     if (!isMounted) {
         return null;
     }
+
     return (
         <header>
             <nav className="w-full fixed h-16 bg-white shadow-md p-4 flex justify-between items-center z-50">
@@ -47,7 +50,13 @@ export default function Header() {
                     <NavigationMenu>
                         <NavigationMenuList>
                             <div className="flex items-center justify-between w-full relative">
-                                <h2 className="font-bold text-lg">InfinityGadgets</h2>
+                                {/* Logo and Title */}
+                                <Link href="/" className="flex items-center space-x-2">
+                                    <Image src="https://adn.nestortech.io/api/va/67a06a45ea8a39c6628c71c3/nestorlogo/dev/generic" alt="Logo" className="object-contain" width={40} height={40} />
+                                    <h2 className="font-bold text-lg">InfinityGadgets</h2>
+                                </Link>
+
+                                {/* Navigation Items */}
                                 {components.map((component, index) => (
                                     <NavigationMenuItem key={index}>
                                         <NavigationMenuLink
@@ -60,6 +69,8 @@ export default function Header() {
                                         </NavigationMenuLink>
                                     </NavigationMenuItem>
                                 ))}
+
+                                {/* Searchbar */}
                                 <div className="ml-5">
                                     <Searchbar />
                                 </div>
@@ -71,6 +82,7 @@ export default function Header() {
         </header>
     );
 }
+
 const ListItem = ({ className, title, children, ...props }, ref) => {
     return (
         <li>
