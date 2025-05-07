@@ -1,22 +1,35 @@
 "use client"
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
+import { useAuth } from "@/app/context/auth-context";
+import { useRouter } from "next/navigation";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Avatar, AvatarImage, AvatarFallback } from "@/components/ui/avatar";
 import { Button } from "@/components/ui/button";
 import { Upload } from "lucide-react";
 
-export default function User() {
-    const [user, setUser] = useState({
+export default function Profile() {
+    const { user } = useAuth();
+    const router = useRouter();
+
+    // Redirect if no user is logged in (optional)
+    useEffect(() => {
+        if (!user) {
+            router.push("/login");
+        }
+    }, [user, router]);
+
+    // Initial dummy user profile info
+    const [userData, setUserData] = useState({
         fullName: "NestorTech",
         image: "/images/Nestor.jpg",
-        email: "nestortech.io@gmail.com",
+        email: user?.email || "",
         contact: "+91 **********",
         createdAt: "2024-08-14T10:00:00Z",
     });
 
-    const [previewImage, setPreviewImage] = useState(user.image);
+    const [previewImage, setPreviewImage] = useState(userData.image);
     const [isEditing, setIsEditing] = useState(false);
-    const [editedUser, setEditedUser] = useState(user);
+    const [editedUser, setEditedUser] = useState(userData);
 
     const handleImageChange = (e) => {
         const file = e.target.files?.[0];
@@ -28,26 +41,23 @@ export default function User() {
 
     const handleChange = (e) => {
         const { name, value } = e.target;
-        setEditedUser((prev) => ({
-            ...prev,
-            [name]: value,
-        }));
+        setEditedUser((prev) => ({ ...prev, [name]: value }));
     };
 
     const toggleEdit = () => {
         if (!isEditing) {
             setEditedUser({
-                ...user,
+                ...userData,
                 createdAt: new Date().toISOString(),
             });
         } else {
-            setUser(editedUser);
+            setUserData(editedUser);
         }
         setIsEditing(!isEditing);
     };
 
     const cancelEdit = () => {
-        setEditedUser(user);
+        setEditedUser(userData);
         setIsEditing(false);
     };
 
@@ -57,8 +67,8 @@ export default function User() {
                 <CardHeader className="flex flex-col items-center text-center">
                     <div className="relative group">
                         <Avatar className="w-28 h-28 mb-4 ring-4 ring-white shadow-lg transition-transform group-hover:scale-105">
-                            <AvatarImage src={previewImage} alt={user.fullName} />
-                            <AvatarFallback>{user.fullName?.charAt(0)}</AvatarFallback>
+                            <AvatarImage src={previewImage} alt={userData.fullName} />
+                            <AvatarFallback>{userData.fullName?.charAt(0)}</AvatarFallback>
                         </Avatar>
                         <label
                             htmlFor="image-upload"
@@ -86,12 +96,12 @@ export default function User() {
                         />
                     ) : (
                         <CardTitle className="text-2xl font-bold text-gray-800 mt-2">
-                            {user.fullName}
+                            {userData.fullName}
                         </CardTitle>
                     )}
 
                     <p className="text-sm text-gray-500">
-                        Joined on {new Date(user.createdAt).toLocaleDateString()}
+                        Joined on {new Date(userData.createdAt).toLocaleDateString()}
                     </p>
                 </CardHeader>
 
@@ -107,7 +117,7 @@ export default function User() {
                                 className="w-full px-3 py-2 border rounded-md text-sm mt-1"
                             />
                         ) : (
-                            <p className="text-base text-gray-900">{user.email}</p>
+                            <p className="text-base text-gray-900">{userData.email}</p>
                         )}
                     </div>
 
@@ -122,7 +132,7 @@ export default function User() {
                                 className="w-full px-3 py-2 border rounded-md text-sm mt-1"
                             />
                         ) : (
-                            <p className="text-base text-gray-900">{user.contact}</p>
+                            <p className="text-base text-gray-900">{userData.contact}</p>
                         )}
                     </div>
 

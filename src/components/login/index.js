@@ -14,6 +14,7 @@ import {
 } from "@/components/ui/card"
 import { Input } from "@/components/ui/input"
 import { Label } from "@/components/ui/label"
+import { useAuth } from "@/app/context/auth-context"
 
 // Zod schema for login
 const loginSchema = z.object({
@@ -28,6 +29,7 @@ const loginSchema = z.object({
 
 export function Login() {
     const router = useRouter()
+    const { login } = useAuth()
 
     const [email, setEmail] = useState("")
     const [password, setPassword] = useState("")
@@ -50,24 +52,19 @@ export function Login() {
             return
         }
 
-        // Replace with your admin credentials
-        const ADMIN_EMAIL = "nestortech.io@gmail.com"
-        const ADMIN_PASSWORD = "Nestor@123"
+        // Clear errors
+        setEmailError("")
+        setPasswordError("")
+        setMessage("Login successful!")
+        setMessageColor("text-green-600")
 
-        if (email === ADMIN_EMAIL && password === ADMIN_PASSWORD) {
-            setEmailError("")
-            setPasswordError("")
-            setMessage("Login successful!")
-            setMessageColor("text-green-600")
+        // Set user in AuthContext
+        login(email)
 
-            // Redirect to /UserProfile
-            setTimeout(() => {
-                router.push("/profile")
-            }, 500)
-        } else {
-            setMessage("Invalid admin credentials.")
-            setMessageColor("text-red-500")
-        }
+        // Redirect to /profile after short delay
+        setTimeout(() => {
+            router.push("/profile")
+        }, 500)
     }
 
     return (
@@ -75,7 +72,7 @@ export function Login() {
             <Card className="w-[400px] p-4">
                 <CardHeader>
                     <CardTitle className="text-3xl">Login</CardTitle>
-                    <CardDescription>Enter your admin credentials to access the site</CardDescription>
+                    <CardDescription>Enter your credentials to access your profile</CardDescription>
                 </CardHeader>
                 <CardContent>
                     <form onSubmit={handleLogin}>
