@@ -11,6 +11,7 @@ import { SkeletonCard } from "@/components/skeleton";
 import ImageGallery from "@/components/ImageGallery";
 import { PDFViewer } from "@/components/PDFViewer";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
+import ProductShare from "@/components/productShare";
 
 function ProductPage({ params }) {
   const [loading, setLoading] = useState(true);
@@ -23,7 +24,7 @@ function ProductPage({ params }) {
     const timer = setTimeout(() => setLoading(false), 5000);
     getProductId().then((id) => {
       setProduct(products.find((p) => p.title.replace(/\s/g, "-") === id));
-      console.log(products, id, "this is id andp product");
+      console.log(products, id, "this is id and product");
     });
     return () => clearTimeout(timer);
   }, []);
@@ -36,6 +37,7 @@ function ProductPage({ params }) {
       </div>
 
       {/* Image View */}
+
       <div className="flex flex-col justify-center items-center">
         {product?.cover && (
           <Tabs defaultValue="product" className="w-full max-w-6xl">
@@ -43,6 +45,11 @@ function ProductPage({ params }) {
               <TabsTrigger value="product">Product</TabsTrigger>
               <TabsTrigger value="documentation">Documentation</TabsTrigger>
             </TabsList>
+
+            {/* Product Share */}
+            <div className="flex justify-center m-1">
+              <ProductShare />
+            </div>
 
             <TabsContent value="product" className="mt-4">
               <div className="flex gap-2 flex-wrap lg:flex-nowrap">

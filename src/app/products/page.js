@@ -1,6 +1,6 @@
 "use client"
 import React from 'react'
-import BreadCrumb from '@/components/breadcrumb';
+import BreadCrumb from '@/components/breadCrumb';
 import ProductCard from "@/components/products/productCard"
 import { products } from '@/lib/shopData';
 import { useRouter } from 'next/navigation';
