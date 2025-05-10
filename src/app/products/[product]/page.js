@@ -47,9 +47,14 @@ function ProductPage({ params }) {
             </TabsList>
 
             {/* Product Share */}
-            <div className="flex justify-center m-1">
-              <ProductShare />
+            <div className="flex justify-center items-center">
+              <ProductShare
+                productUrl={`/products/${product.title.replace(/\s/g, "-")}`}
+                productImageUrl={product.cover.url}
+              />
             </div>
+
+
 
             <TabsContent value="product" className="mt-4">
               <div className="flex gap-2 flex-wrap lg:flex-nowrap">

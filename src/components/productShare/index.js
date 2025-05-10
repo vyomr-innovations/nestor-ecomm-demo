@@ -21,7 +21,7 @@ const PinterestIcon = () => (
     </svg>
 );
 
-export default function ProductShare({ productUrl }) {
+export default function ProductShare({ productUrl, productImageUrl }) {
     const [open, setOpen] = useState(false);
     const [copied, setCopied] = useState(false);
 
@@ -36,12 +36,12 @@ export default function ProductShare({ productUrl }) {
         {
             label: "WhatsApp",
             icon: <MessageCircleMore className="w-4 h-4 mr-2" />,
-            link: `https://wa.me/?text=${encodeURIComponent(productUrl)}`
+            link: `https://wa.me/?text=${encodeURIComponent(`${productUrl}\n${productImageUrl}`)}`
         },
         {
             label: "Email",
             icon: <Mail className="w-4 h-4 mr-2" />,
-            link: `mailto:?subject=Check this product&body=${encodeURIComponent(productUrl)}`
+            link: `mailto:?subject=Check this product&body=${encodeURIComponent(`${productUrl}\n${productImageUrl}`)}`
         },
         {
             label: "Facebook",
@@ -51,12 +51,12 @@ export default function ProductShare({ productUrl }) {
         {
             label: "Twitter",
             icon: <Twitter className="w-4 h-4 mr-2" />,
-            link: `https://twitter.com/intent/tweet?url=${encodeURIComponent(productUrl)}`
+            link: `https://twitter.com/intent/tweet?url=${encodeURIComponent(productUrl)}&text=${encodeURIComponent(productImageUrl)}`
         },
         {
             label: "Pinterest",
             icon: <PinterestIcon />,
-            link: `https://pinterest.com/pin/create/button/?url=${encodeURIComponent(productUrl)}`
+            link: `https://pinterest.com/pin/create/button/?url=${encodeURIComponent(productUrl)}&media=${encodeURIComponent(productImageUrl)}`
         }
     ];
 
@@ -65,7 +65,7 @@ export default function ProductShare({ productUrl }) {
             {/* Main Share Icon */}
             <button
                 onClick={() => setOpen(!open)}
-                className="p-2 rounded-full  hover:bg-gray-200"
+                className="p-2 rounded-full hover:bg-gray-200"
             >
                 <Share className="w-5 h-5 text-black" />
             </button>
