@@ -26,7 +26,7 @@ export default function ProductShare({ productUrl, productImageUrl }) {
     const [copied, setCopied] = useState(false);
 
     const handleCopy = () => {
-        navigator.clipboard.writeText(productUrl).then(() => {
+        navigator.clipboard.writeText(productImageUrl).then(() => {
             setCopied(true);
             setTimeout(() => setCopied(false), 2000);
         });

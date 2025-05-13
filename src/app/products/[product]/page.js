@@ -49,7 +49,7 @@ function ProductPage({ params }) {
             {/* Product Share */}
             <div className="flex justify-center items-center">
               <ProductShare
-                productUrl={`/products/${product.title.replace(/\s/g, "-")}`}
+                productUrl={`${product.title}`}
                 productImageUrl={product.cover.url}
               />
             </div>
