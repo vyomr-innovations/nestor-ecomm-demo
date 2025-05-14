@@ -1,7 +1,7 @@
 const baseUrl = "https://adn.nestortech.io/api/vi/67a06a45ea8a39c6628c71c3";
 export const products = [
   {
-    cover: { url: `https://adn.nestortech.io/api/vi/67a06a45ea8a39c6628c71c3/SunbeamToteJeff/39eff1030679/dev/generic` },
+    cover: { url: `${baseUrl}/SunbeamToteJeff/39eff1030679/dev/generic` },
     title: "Sunbeam Tote Jeff",
     price: "$25.00",
     category: "Accessories",
