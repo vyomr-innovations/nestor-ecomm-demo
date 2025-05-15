@@ -4,11 +4,11 @@ import { products } from "@/lib/shopData";
 // Generate metadata for the product page
 export async function generateMetadata({ params }) {
   // Get the product ID from the URL
-  const productId = params.product;
-  
+  const productId = await params.product;
+
   // Find the product in your data
   const product = products.find((p) => p.title.replace(/\s/g, "-") === productId);
-  
+
   // If no product is found, return basic metadata
   if (!product) {
     return {
@@ -16,9 +16,9 @@ export async function generateMetadata({ params }) {
       description: 'The requested product could not be found.',
     };
   }
-  
+
   const baseUrl = process.env.NEXT_PUBLIC_BASE_URL || 'http://localhost:3000';
-  
+
   // Generate the metadata for this product
   return {
     title: product.title,
