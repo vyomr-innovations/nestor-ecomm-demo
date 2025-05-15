@@ -26,7 +26,7 @@ export default function ProductShare({ productUrl, productImageUrl }) {
     const [copied, setCopied] = useState(false);
 
     const handleCopy = () => {
-        navigator.clipboard.writeText(productImageUrl).then(() => {
+        navigator.clipboard.writeText(productUrl).then(() => {
             setCopied(true);
             setTimeout(() => setCopied(false), 2000);
         });
@@ -36,7 +36,7 @@ export default function ProductShare({ productUrl, productImageUrl }) {
         {
             label: "WhatsApp",
             icon: <MessageCircleMore className="w-4 h-4 mr-2" />,
-            link: `https://wa.me/?text=${encodeURIComponent(`${productUrl}\n${productImageUrl}`)}`
+            link: `https://wa.me/?text=${encodeURIComponent(`${productUrl}`)}`
         },
         {
             label: "Email",

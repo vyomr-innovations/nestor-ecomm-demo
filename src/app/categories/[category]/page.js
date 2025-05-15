@@ -7,14 +7,14 @@ import { useRouter } from 'next/navigation';
 function CategoriesPage({ params }) {
     const router = useRouter();
     const [categoryId, setCatogoryId] = useState();
-    
+
     const getId = useCallback(async () => {
         const id = (await params).category;
         setCatogoryId(id);
     }, [params]);
-    
+
     const filteredItems = products.filter(product => product.category === categoryId);
-    
+
     useEffect(() => {
         getId();
     }, [getId])
@@ -42,7 +42,7 @@ function CategoriesPage({ params }) {
                             cover={product.cover.url}
                             title={product.title}
                             price={product.price}
-                            onClick={() => router.push(`/products/${product.title.replace(/\s+/g, "-")}`)}                            
+                            onClick={() => router.push(`/products/${product.title.replace(/\s+/g, "-")}`)}
                         />
                     )
                 }) : null

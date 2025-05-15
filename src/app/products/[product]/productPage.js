@@ -1,7 +1,6 @@
 /* eslint-disable react-hooks/exhaustive-deps */
 "use client";
 import React, { useState, useEffect } from "react";
-import ImageView from "@/components/imageView";
 import ProductSugg from "@/components/productSuggestions";
 import ProductInfo from "@/components/productInfo";
 import { products } from "@/lib/shopData";
@@ -26,7 +25,16 @@ function ProductPage({ params }) {
     });
     return () => clearTimeout(timer);
   }, []);
+  const baseUrl = process.env.NEXT_PUBLIC_BASE_URL
+  const slug =
+    product.title &&
+    product.title
+      .trim()
+      .replace(/[^\w\s-]/g, "")
+      .replace(/\s+/g, "-")
+      .replace(/--+/g, "-");
 
+  const productUrl = `${baseUrl}/products/${slug}`;
   return (
     <>
       {/* BreadCrumb Component */}
@@ -47,7 +55,7 @@ function ProductPage({ params }) {
             {/* Product Share */}
             <div className="flex justify-center items-center">
               <ProductShare
-                productUrl={`${product.title}`}
+                productUrl={productUrl}
                 productImageUrl={product.cover.url}
               />
             </div>
