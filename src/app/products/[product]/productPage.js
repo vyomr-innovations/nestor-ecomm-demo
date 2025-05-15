@@ -1,7 +1,6 @@
 /* eslint-disable react-hooks/exhaustive-deps */
 "use client";
 import React, { useState, useEffect } from "react";
-import BreadCrumb from "@/components/breadCrumb";
 import ImageView from "@/components/imageView";
 import ProductSugg from "@/components/productSuggestions";
 import ProductInfo from "@/components/productInfo";
@@ -10,6 +9,7 @@ import { ProductSlider } from "@/components/productViewer";
 import { PDFViewer } from "@/components/PDFViewer";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 import ProductShare from "@/components/productShare";
+import BreadCrumb from "@/components/breadcrumb";
 
 function ProductPage({ params }) {
   const [loading, setLoading] = useState(true);

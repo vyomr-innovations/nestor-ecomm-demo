@@ -1,6 +1,6 @@
 "use client"
 import ProductCard from '@/components/products/productCard';
-import BreadCrumb from '@/components/breadCrumb';
+import BreadCrumb from '@/components/breadcrumb';
 import { products } from '@/lib/shopData';
 import React, { useEffect, useState, useCallback } from 'react'
 import { useRouter } from 'next/navigation';

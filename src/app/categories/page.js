@@ -1,6 +1,6 @@
 "use client"
 import ProductCard from '@/components/products/productCard';
-import BreadCrumb from '../../components/breadCrumb';
+import BreadCrumb from '../../components/breadcrumb';
 import { products } from '@/lib/shopData';
 import React from 'react';
 import CategoryGrid from '@/components/categories/categorieCard';
