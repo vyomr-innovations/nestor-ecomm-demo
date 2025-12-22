@@ -6,7 +6,7 @@ import ProductGrid from "@/components/products/productGrid";
 import { products } from "@/lib/shopData";
 import { useRouter } from "next/navigation";
 
-// this is the home page
+// this is the home page of the app
 export default function Home() {
   const route = useRouter();
   return (
