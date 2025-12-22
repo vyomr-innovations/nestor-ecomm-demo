@@ -1,23 +1,42 @@
 "use client"
 import ProductCard from '@/components/products/productCard';
 import BreadCrumb from '@/components/breadcrumb';
-import { products } from '@/lib/shopData';
+import { getProductsByCategory } from '@/lib/shopData';
 import React, { useEffect, useState, useCallback } from 'react'
 import { useRouter } from 'next/navigation';
+
 function CategoriesPage({ params }) {
     const router = useRouter();
-    const [categoryId, setCatogoryId] = useState();
+    const [categoryId, setCategoryId] = useState();
+    const [products, setProducts] = useState([]);
+    const [loading, setLoading] = useState(true);
 
     const getId = useCallback(async () => {
         const id = (await params).category;
-        setCatogoryId(id);
+        setCategoryId(id);
     }, [params]);
-
-    const filteredItems = products.filter(product => product.category === categoryId);
 
     useEffect(() => {
         getId();
-    }, [getId])
+    }, [getId]);
+
+    useEffect(() => {
+        async function loadProducts() {
+            if (!categoryId) return;
+            
+            try {
+                setLoading(true);
+                const data = await getProductsByCategory(categoryId);
+                setProducts(data);
+            } catch (error) {
+                console.error('Error loading products:', error);
+            } finally {
+                setLoading(false);
+            }
+        }
+        loadProducts();
+    }, [categoryId]);
+
     return (
         <>
             {/* BreadCrumb Component */}
@@ -33,23 +52,35 @@ function CategoriesPage({ params }) {
                 </p>
             </div>
 
-            <div className="grid grid-cols-3">
-                {(categoryId && filteredItems) ? filteredItems.map((product, index) => {
-                    return (
-                        <ProductCard
-                            key={index}
-                            id={product.title.toLowerCase().replace(/\s+/g, '-')}
-                            cover={product.cover.url}
-                            title={product.title}
-                            price={product.price}
-                            onClick={() => router.push(`/products/${product.title.replace(/\s+/g, "-")}`)}
-                        />
-                    )
-                }) : null
-                }
-            </div>
+            {loading ? (
+                <div className="grid grid-cols-3 gap-4 mt-4">
+                    {[...Array(6)].map((_, i) => (
+                        <div key={i} className="animate-pulse">
+                            <div className="bg-gray-200 h-64 rounded-lg"></div>
+                            <div className="h-4 bg-gray-200 rounded mt-2"></div>
+                            <div className="h-4 bg-gray-200 rounded mt-2 w-1/2"></div>
+                        </div>
+                    ))}
+                </div>
+            ) : (
+                <div className="grid grid-cols-3">
+                    {products.map((product, index) => {
+                        return (
+                            <ProductCard
+                                key={index}
+                                id={product.title.toLowerCase().replace(/\s+/g, '-')}
+                                cover={product.cover.url}
+                                title={product.title}
+                                price={product.price}
+                                onClick={() => router.push(`/products/${product.title.replace(/\s+/g, "-")}`)}
+                            />
+                        )
+                    })}
+                </div>
+            )}
         </>
     );
 }
 
 export default CategoriesPage;
+
