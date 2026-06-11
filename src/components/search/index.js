@@ -32,36 +32,29 @@ function Searchbar() {
     }
 
     return (
-        <header className="fixed top-4 right-5 flex items-center gap-4 sm:gap-6 z-50">
+        <div className="flex items-center">
+            {/* Desktop Search */}
             <div className="relative hidden md:flex">
                 <Input
                     type="search"
                     id="search"
                     placeholder="Search for Products..."
-                    className="text-black w-60 md:w-72 lg:w-80 h-9 border-input p-3 shadow-xs rounded-md border bg-white"
+                    className="text-black w-60 md:w-72 lg:w-80 h-9 border-gray-300 p-3 shadow-sm rounded-none border bg-white focus-visible:ring-1 focus-visible:ring-black"
                     value={searchTerm}
                     onChange={(e) => setSearchTerm(e.target.value)}
                     onKeyDown={handleKeyDown}
                 />
                 <Search
-                    className="absolute top-1/2 right-2 transform -translate-y-1/2 cursor-pointer"
+                    className="absolute top-1/2 right-2 transform -translate-y-1/2 cursor-pointer w-4 h-4 text-gray-500"
                     onClick={handleSearch}
                 />
             </div>
 
-            <div className="flex items-center gap-3 sm:gap-4">
-                <Link href="/cart">
-                    <ShoppingBag className="cursor-pointer hover:text-gray-500" />
-                </Link>
-                <Link href="/userlogin">
-                    <User2Icon className="cursor-pointer hover:text-gray-500" />
-                </Link>
-            </div>
-
+            {/* Mobile Search Icon */}
             <div className="md:hidden">
-                <Search className="cursor-pointer text-xl" />
+                <Search className="cursor-pointer text-gray-500 hover:text-black w-5 h-5" />
             </div>
-        </header>
+        </div>
     );
 }
 
