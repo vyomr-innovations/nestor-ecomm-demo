@@ -4,29 +4,29 @@ import { Card, CardFooter } from "@/components/ui/card";
 import Link from 'next/link';
 
 function ProductSugg({ cover, title, price }) {
+    const href = `/products/${title.replace(/\s+/g, '-')}`;
+
     return (
-        <>
-            <div className='flex items-center m-2'>
-                <Card className="border-none w-50 shadow-md hover:scale-105 transition-transform duration-300">
+        <div className='flex items-center m-2'>
+            <Link href={href} className='no-underline block'>
+                <Card className="border-none w-50 shadow-md hover:scale-105 transition-transform duration-300 cursor-pointer">
                     <Image
                         src={cover}
                         width={300}
                         height={300}
-                        className='max-w-100 rounded-lg cursor-pointer'
+                        className='max-w-100 rounded-lg'
                         unoptimized
-                        alt="Image-view"
+                        alt={title}
                     />
                     <CardFooter>
                         <div className="flex flex-col p-1 m-1">
-                            <Link href={`/products/${title.replace(/\s+/g, '-')}`} className='no-underline'>
-                                <h3 className='font-semibold text-lg hover:text-blue-600'>{title}</h3>
-                            </Link>
+                            <h3 className='font-semibold text-lg hover:text-blue-600'>{title}</h3>
                             <p>{price}</p>
                         </div>
                     </CardFooter>
                 </Card>
-            </div>
-        </>
+            </Link>
+        </div>
     )
 }
 

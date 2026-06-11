@@ -108,24 +108,28 @@ export const productMetadata = [
     collectionId: "ChestnutCarryallBag",
     title: "Chestnut Carryall Bag",
     price: "$10.00",
-    category: "product suggestions"
+    category: "Accessories",
+    suggestion: true
   },
   {
     collectionId: "VersatileToteBackpack",
     title: "Versatile Tote Backpack",
     price: "$1,000.00",
-    category: "product suggestions"
+    category: "Accessories",
+    suggestion: true
   },
   {
     collectionId: "EcoFriendlyTote",
     title: "Eco friendly Tote",
     price: "$300.00",
-    category: "product suggestions"
+    category: "Accessories",
+    suggestion: true
   },
   {
     collectionId: "ClassicMessengerBag",
     title: "Classic Messenger Bag",
     price: "$700.00",
-    category: "product suggestions"
+    category: "Accessories",
+    suggestion: true
   }
 ];

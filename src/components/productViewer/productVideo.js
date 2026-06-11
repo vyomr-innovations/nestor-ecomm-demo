@@ -8,7 +8,6 @@ function ProductVideo({ url }) {
   const togglePlay = () => {
     if (isPlaying) {
       videoRef.current.pause();
-      videoRef.current.currentTime = 0;
     } else {
       videoRef.current.play();
     }
@@ -18,8 +17,9 @@ function ProductVideo({ url }) {
   return (
     <video
       ref={videoRef}
-      className="aspect-square max-w-100 h-100 block rounded"
+      className="w-full h-auto block rounded"
       onClick={togglePlay}
+      controls
     >
       <source src={url} type="video/mp4" />
     </video>

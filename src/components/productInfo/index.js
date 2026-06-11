@@ -2,20 +2,26 @@
 import React from 'react'
 import { Button } from "@/components/ui/button";
 
-function ProductInfo({product}) {
+function ProductInfo({ product, onAddToCart }) {
     return (
         <>
             <h1 className='text-3xl font-bold'>{product?.title}</h1>
             <h2 className='text-2xl text-gray-500'>{product?.price}</h2>
 
-            <p className='mt-5'>Brighten your day with this cheerful yellow bag. Its vibrant color and ample
+            <p className='mt-5'>
+                Brighten your day with this cheerful yellow bag. Its vibrant color and ample
                 storage space make it an excellent choice for shopping or day trips. Lightweight
                 and durable, it's designed for comfort and convenience.
             </p>
 
-            <Button className='rounded-full h-10 w-full p-2 mt-7 text-lg'>Add to cart</Button>
+            <Button
+                className='rounded-full h-10 w-full p-2 mt-7 text-lg'
+                onClick={onAddToCart}
+            >
+                Add to cart
+            </Button>
         </>
-
     )
 }
+
 export default ProductInfo;

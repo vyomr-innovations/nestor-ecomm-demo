@@ -58,6 +58,15 @@ export async function getProductsByCategory(category) {
 }
 
 /**
+ * Get products flagged as suggestions (shown in "You May Also Like")
+ * @returns {Promise<Array>} Suggestion products
+ */
+export async function getProductSuggestions() {
+  const products = await getProducts();
+  return products.filter(p => p.suggestion === true);
+}
+
+/**
  * Clear the product cache (useful for forcing refresh)
  */
 export function clearProductCache() {

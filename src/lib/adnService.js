@@ -53,26 +53,30 @@ export function transformADNToProduct(adnData, metadata) {
     ? buildMediaUrl(adnData.anchorAsset.downloadUrl)
     : null;
 
-  // Transform asset items to thumbnails (filter out items without mimetype)
+  // Build thumbnails from ALL image/video assets (including anchorAsset)
   const thumbnails = adnData.assetItemUrls
-    .filter(asset => 
-      asset.mimetype && (
-        asset.mimetype.startsWith('image/') || 
+    .filter(asset =>
+      asset.mimetype &&
+      (
+        asset.mimetype.startsWith('image/') ||
         asset.mimetype.startsWith('video/')
       )
     )
     .map(asset => {
       const thumbnail = {
+        assetItemId: asset.assetItemId,
+        name: asset.assetItemName || '',
         url: buildMediaUrl(asset.downloadUrl)
       };
-      
+
       // Mark videos with type property
       if (asset.mimetype.startsWith('video/')) {
         thumbnail.type = 'video';
       }
-      
+
       return thumbnail;
     });
+
 
   // Find PDF for documentation
   const pdfAsset = adnData.assetItemUrls.find(
@@ -86,6 +90,7 @@ export function transformADNToProduct(adnData, metadata) {
     title: metadata.title,
     price: metadata.price,
     category: metadata.category,
+    suggestion: metadata.suggestion || false,
     cover: {
       url: coverUrl
     },
